@@ -1,0 +1,227 @@
+{
+  "menu": [
+    {
+      "url": "home",
+      "name": "Dashboard",
+      "i18n": "Dashboard",
+      "slug": "dashboard",
+      "icon": "svg/icons/Layout/Layout-arrange.svg"
+    },
+    {
+      "url": "role/roles",
+      "name": "Roles",
+      "i18n": "Roles",
+      "slug": "roles",
+      "icon": "svg/icons/Layout/Layout-grid.svg",
+      "auth": "admin"
+    },
+    {
+      "url": "users",
+      "name": "Users",
+      "i18n": "Users",
+      "slug": "users",
+      "icon": "svg/icons/Communication/Group.svg",
+      "auth": "admin",
+      "submenu" : [
+        {
+          "url": "users/admins-list",
+          "name": "Admins list",
+          "i18n": "Admins_list",
+          "auth": "admin"
+        },
+        {
+          "url": "users/users-list",
+          "name": "Users list",
+          "i18n": "Users_list",
+          "auth": "admin"
+        }
+      ]
+    },
+    {
+      "url": "reports",
+      "name": "Reports",
+      "i18n": "Reports",
+      "slug": "reports",
+      "icon": "svg/icons/General/Clipboard.svg",
+      "auth": "admin",
+      "submenu" : [
+        {
+          "url": "reports/revenues-list",
+          "name": "Revenues list",
+          "i18n": "Revenues_list",
+          "auth": "admin"
+        },
+        {
+          "url": "reports/expenses",
+          "name": "Expenses",
+          "i18n": "Expenses",
+          "auth": "admin"
+        },
+        {
+          "url": "reports/orders-list",
+          "name": "Orders list",
+          "i18n": "Orders_list",
+          "auth": "admin"
+        }
+      ]
+    },
+    {
+      "url": "settings",
+      "name": "Settings",
+      "i18n": "Settings",
+      "slug": "settings",
+      "icon": "svg/icons/Shopping/Settings.svg",
+      "auth": "admin",
+      "submenu" : [
+        {
+          "url": "settings/constant/categories",
+          "name": "Categories list",
+          "i18n": "Categories_list",
+          "auth": "admin"
+        },
+        {
+          "url": "settings/constant/customizations",
+          "name": "Customizations",
+          "i18n": "Customizations",
+          "auth": "admin"
+        },
+        {
+          "url": "settings/constant/shipments",
+          "name": "Shipments",
+          "i18n": "Shipments",
+          "auth": "admin"
+        },
+        {
+          "url": "settings/constant/list",
+          "name": "Settings list",
+          "i18n": "Settings_list",
+          "auth": "admin"
+        }
+      ]
+    },
+    {
+      "url": "sponsors/sponsor-requests",
+      "name": "Sponsors requests",
+      "i18n": "Sponsor requests",
+      "slug": "sponsor-requests",
+      "icon": "svg/icons/Communication/Reply-all.svg",
+      "auth": "admin"
+    },
+    {
+      "url": "notifications/notifications-list",
+      "name": "Notifications",
+      "i18n": "Notifications",
+      "icon": "svg/icons/General/Notification2.svg",
+	    "auth": "admin"
+    },
+    {
+      "url": "contacts",
+      "name": "Contacts",
+      "i18n": "Contacts",
+      "icon": "svg/icons/Communication/Group-chat.svg",
+	    "auth": "admin"
+    },
+    {
+      "url": "offers",
+      "name": "offers",
+      "i18n": "Email",
+      "icon": "svg/icons/Shopping/Sale2.svg",
+	    "auth": "admin"
+    },
+    {
+      "url": "advertisements",
+      "name": "Advertisements",
+      "i18n": "Advertisements",
+      "icon": "svg/icons/Shopping/Sale2.svg",
+	    "auth": "admin"
+    },
+    {
+      "url": "promotion-codes",
+      "name": "Promotion_Codes",
+      "i18n": "Promotion_Codes",
+      "icon": "svg/icons/Shopping/Sale2.svg",
+	    "auth": "admin"
+    },
+    {
+      "url": "term",
+      "name": "Term",
+      "i18n": "Term",
+      "icon": "svg/icons/Navigation/Double-check.svg",
+	    "auth": "admin"
+    },
+    {
+      "url": "policy",
+      "name": "Policy",
+      "i18n": "Policy",
+      "icon": "svg/icons/General/Shield-protected.svg",
+	    "auth": "admin"
+    },
+    {
+      "url": "abouts",
+      "name": "About",
+      "i18n": "About",
+      "icon": "svg/icons/Code/Info-circle.svg",
+	    "auth": "admin"
+    },
+
+    {
+      "url": "categories",
+      "name": "Categories",
+      "i18n": "Email",
+      "icon": "svg/icons/Home/Commode2.svg",
+	    "auth": "merchant"
+    },
+    {
+      "url": "products",
+      "name": "Products",
+      "i18n": "Email",
+      "icon": "svg/icons/Home/Box.svg",
+      "auth": "merchant"
+    },
+
+    {
+      "url": "drivers-list",
+      "name": "Drivers",
+      "i18n": "Email",
+      "icon": "svg/icons/Communication/Group.svg",
+	  "auth": "merchant"
+    },
+    {
+      "url": "store",
+      "name": "Stores",
+      "i18n": "Email",
+      "icon": "svg/icons/Map/Compass.svg",
+	  "auth": "merchant"
+    },
+    {
+      "url": "notifications",
+      "name": "Notifications",
+      "i18n": "Email",
+      "icon": "svg/icons/General/Notification2.svg",
+	  "auth": "merchant"
+    },
+    {
+      "url": "advertisements",
+      "name": "advertisements",
+      "i18n": "Email",
+      "icon": "svg/icons/General/Clip.svg",
+	  "auth": "merchant"
+    },
+
+    {
+      "url": "Settings",
+      "name": "Settings",
+      "i18n": "Chat",
+      "icon": "svg/icons/Shopping/Settings.svg",
+      "auth": "merchant",
+      "submenu" : [
+        {
+          "url": "shipments",
+          "name": "Shipping rate",
+          "i18n": "Chat",
+          "icon": "bx-comments"
+        }
+      ]
+    }
+  ]
+}

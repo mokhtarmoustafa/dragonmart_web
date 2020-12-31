@@ -1,0 +1,7 @@
+@import "fonts/Expo.css";
+
+
+* , h1 , h2 , h3 , h4 , h5 , h6 , td , th , .table th, .table td  , .badge , .modal .modal-content .modal-header .modal-title {
+/*	font-family: 'Quicksand',"Noto Sans Kufi Arabic",'Cairo','Tajawal', Georgia, 'Times New Roman', Times, serif;*/
+	font-family: 'Expo' , 'Cairo','Tajawal', Georgia, 'Times New Roman', Times, serif;
+}

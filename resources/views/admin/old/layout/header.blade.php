@@ -1,0 +1,84 @@
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner ">
+        <!-- BEGIN LOGO -->
+        {{--        <div class="page-logo">--}}
+        {{--            <a href="{{url(admin_vw().'/home')}}" style="margin: 10px 25%;text-align: center;">--}}
+        {{--                <img src="{{url('assets/apps/img/logo.png')}}" alt="logo" class="logo-default img-circle"--}}
+        {{--                     style="width: 55%;margin: 0px;"/> </a>--}}
+        {{--            <div class="menu-toggler sidebar-toggler">--}}
+        {{--                <span></span>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
+
+        <div class="page-logo">
+            <a href="{{url(admin_vw().'/home')}}" style="    margin: 0px;
+    margin-top: 4px;
+    text-align: center;
+    width: 87%;">
+                <img src="{{url('assets/apps/img/logo.png')}}" alt="logo" class="logo-default img-circle"
+                     style="width: 44%;margin: 0px;"/> </a>
+            <div class="menu-toggler sidebar-toggler">
+                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+            </div>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse"
+           data-target=".navbar-collapse">
+            <span></span>
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+        <div class="page-top">
+
+            <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
+                <ul class="nav navbar-nav pull-right">
+                    <!-- BEGIN USER LOGIN DROPDOWN -->
+                    <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                    <li class="dropdown dropdown-user">
+                        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                           data-close-others="true">
+{{--                            <img alt="" class="img-circle"--}}
+{{--                                 src="{{auth()->guard('admin')->user()->logo??url('assets/apps/img/man.svg')}}"/>--}}
+                            <span class="username username-hide-on-mobile"> {{$currentUser->username}} </span>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-default">
+                            <li>
+                                <a href="{{url(admin_vw().'/admin-profile')}}">
+                                    <i class="icon-user"></i> My Profile </a>
+                            </li>
+                            <li>
+                                 @if(session()->has('lang') && session()->get('lang') == 'ar')
+                                     <a href="{{url(site_url().'/lang/en')}}"><span class="flag"><img
+                                                    src="{{url('/assets')}}/site/images/en.png" alt=""></span>
+                                        English</a>
+                                  @else 
+                                  <a href="{{url(site_url().'/lang/ar')}}"><span class="flag"><img
+                                                    src="{{url('/assets')}}/site/images/ar.png" alt=""></span>
+                                        {{trans(lang_app_site().'.home.arabic')}}</a>
+                                  
+                                  @endif
+                                    
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.logout') }}"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    <i class="icon-key"></i>  {{trans(lang_app_site().'.home.logout')}} </a>
+                            </li>
+
+                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
+                                  style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </ul>
+                    </li>
+                    <!-- END USER LOGIN DROPDOWN -->
+                </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+        </div>
+    </div>
+    <!-- END HEADER INNER -->
+</div>

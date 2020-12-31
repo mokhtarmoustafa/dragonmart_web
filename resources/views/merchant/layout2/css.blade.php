@@ -1,0 +1,47 @@
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet"
+      type="text/css"/>
+<link href="{{url('/')}}/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="{{url('/')}}/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+      type="text/css"/>
+<link href="{{url('/')}}/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="{{url('/')}}/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet"
+      type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+@yield('css')
+
+
+<link href="{{url('/')}}/assets/global/plugins/bootstrap-toastr/toastr.min.css" rel="stylesheet" id="style_components"
+      type="text/css">
+<!-- BEGIN THEME GLOBAL STYLES -->
+<link href="{{url('/')}}/assets/global/css/components-md.min.css" rel="stylesheet" id="style_components"
+      type="text/css"/>
+<link href="{{url('/')}}/assets/global/css/plugins-md.min.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME GLOBAL STYLES -->
+<!-- BEGIN THEME LAYOUT STYLES -->
+<link href="{{url('/')}}/assets/layouts/layout/css/layout.min.css" rel="stylesheet" type="text/css"/>
+<link href="{{url('/')}}/assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css"
+      id="style_color"/>
+<link href="{{url('/')}}/assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME LAYOUT STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+<style>
+    .dataTables_wrapper .dataTables_processing {
+        border: none !important;
+        background: none !important;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+    .modal-footer button {
+        float:right;
+        margin-left: 10px;
+    }
+
+     th, td {
+         text-align: center !important;
+     }
+</style>
+@stack('css')

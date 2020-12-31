@@ -1,0 +1,205 @@
+$(document).ready(function () {
+
+    if ($("#stores_tbl").length) {
+
+        var stores_tbl = $("#stores_tbl");
+        stores_tbl.on('preXhr.dt', function (e, settings, data) {
+            //.name,.title,.server,.searcher.,.status
+            // data.name = $('.name').val();
+            data.name = $('#name').val();
+            data.merchant = $('#merchant').val();
+        }).dataTable({
+            "processing": true,
+            "serverSide": true,
+
+            "ajax": {
+                url: baseURL + "/users/stores-data"
+                , "dataSrc": function (json) {
+                    //Make your callback here.
+                    if (json.status != undefined && !json.status) {
+                        $('#stores_tbl_processing').hide();
+                        bootbox.alert(json.message);
+                        //
+                    } else
+                        return json.data;
+                }
+            },
+
+            columns: [
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                {data: 'name', name: 'name'},
+                {data: 'merchant.name', name: 'merchant.name'},
+                {data: 'action', name: 'action'}
+            ],
+
+            language: {
+                "sProcessing": "<img src='" + baseAssets + "/apps/img/preloader_.gif'>",
+            },
+            "searching": false,
+            "ordering": false,
+
+            bStateSave: !0,
+            lengthMenu: [[5, 10, 15, 20, -1], [5, 10, 15, 20, "All"]],
+            pageLength: 10,
+            pagingType: "bootstrap_full_number",
+            columnDefs: [{orderable: !1, targets: [0]}, {searchable: !1, targets: [0]}, {className: "dt-right"}],
+            order: [[2, "asc"]]
+        });
+    }
+
+    $(document).on('click', '.delete_image', function (event) {
+
+        var _this = $(this);
+
+        _this.find('.btn i').addClass('fa-spinner fa-spin');
+        var action = _this.attr('data-url');
+        event.preventDefault();
+        var constant_name = _this.closest('tr').find("td:eq(1)").text();
+
+        bootbox.dialog({
+            message: "Are you sure to delete (" + constant_name + ")? <span class='label label-danger'> Can not return back...</span>",
+            title: "Confirm deletion !",
+            buttons: {
+
+                main: {
+                    label: 'Sure <i class="fa fa-check"></i> ',
+                    className: "btn-primary",
+                    callback: function () {
+                        //do something else
+                        $.ajax({
+                            url: action,
+                            type: 'DELETE',
+                            dataType: 'json',
+                            data: {_token: csrf_token},
+                            success: function (data) {
+
+                                if (data.status) {
+                                    toastr['success'](data.message, '');
+                                    _this.closest('tr').remove();
+
+                                }
+                                else {
+                                    toastr['error'](data.message);
+                                }
+                            }
+                        });
+                    }
+                }, danger: {
+                    label: 'Close <i class="fa fa-remove"></i>',
+                    className: "btn-danger",
+                    callback: function () {
+                        //do something
+                        bootbox.hideAll()
+                    }
+                }
+            }
+        });
+
+
+    });
+
+    $(document).on("click", ".filter-submit", function () {
+//                if ($(this).val().length > 3)
+        stores_tbl.api().ajax.reload();
+    });
+    $(document).on('click', '.filter-cancel', function () {
+
+        $(".select2").val('').trigger('change');
+        $(this).closest('tr').find('input,select').val('');
+        // $('#is_admin_confirm,.status').val('').trigger('change');
+        stores_tbl.api().ajax.reload();
+    });
+
+    $(document).on('click', '.add-store-mdl', function (e) {
+        e.preventDefault();
+        $("#wait_msg,#overlay").show();
+        var action = $(this).attr('href');
+
+        $.ajax({
+            url: action,
+            type: 'GET',
+            success: function (data) {
+                $("#wait_msg,#overlay").hide();
+
+                $('#results-modals').html(data);
+                $('#add-store').modal('show', {backdrop: 'static', keyboard: false});
+            }, error: function (xhr) {
+
+            }
+        });
+    });
+
+    $(document).on('click', '.edit-store-mdl', function (e) {
+        $("#wait_msg,#overlay").show();
+        e.preventDefault();
+        var action = $(this).attr('href');
+        $.ajax({
+            url: action,
+            type: 'GET',
+            success: function (data) {
+                $("#wait_msg,#overlay").hide();
+
+                $('#results-modals').html(data);
+                $('#edit-store').modal('show', {backdrop: 'static', keyboard: false});
+            }, error: function (xhr) {
+
+            }
+        });
+    });
+
+    $(document).on('submit', '#formAdd,#formEdit,#save_store_info_frm,#fileupload', function (event) {
+
+        var _this = $(this);
+        // var loader = '<i class="fa fa-spinner fa-spin"></i>';
+        _this.find('.btn.save i').addClass('fa-spinner fa-spin');
+        event.preventDefault(); // Totally stop stuff happening
+        // START A LOADING SPINNER HERE
+        // Create a formdata object and add the files
+
+        var formData = new FormData($(this)[0]);
+        // var formData = new FormData($('#myForm')[0]);
+        // if (filesArray != undefined)
+        //     for (var i = 0, file; file = filesArray[i]; i++) {
+        //         formData.append('files[]', file);
+        //     }
+        var action = $(this).attr('action');
+        var method = $(this).attr('method');
+
+        $.ajax({
+            url: action,
+            type: method,
+            data: formData,
+
+            contentType: false,
+            processData: false,
+            success: function (data) {
+
+                if (data.status) {
+
+                    $('.alert').hide();
+                    toastr['success'](data.message, '');
+                    users_tbl.api().ajax.reload();
+                    $('.store_images').slideDown();
+                    $('.store_drivers').slideDown();
+                    $('.store_products').slideDown();
+
+                }
+                else {
+                    var $errors = '<strong>' + data.message + '</strong>';
+                    $errors += '<ul>';
+                    $.each(data.errors, function (i, v) {
+                        $errors += '<li>' + v.message + '</li>';
+                    });
+                    $errors += '</ul>';
+                    $('.alert').show();
+                    $('.alert').html($errors);
+                    // toastr['error'](data.message);
+                }
+                _this.find('.btn.save i').removeClass('fa-spinner fa-spin');
+                // _this.find('.fa-spin').hide();
+
+            }
+        });
+    });
+
+});
