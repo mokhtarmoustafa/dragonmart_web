@@ -21,12 +21,14 @@ app()->setLocale(request()->header('lang'));
 
 Route::get('test', function(){
 
-  return App\User::with(array('store'=>function($query){
-    $query->select('id');
-  }))->select('id','username')->where('id', 387)->get();
-  // return App\User::with('store')->where('id', 387)->get('id', 'username');
-  return App\User::where('id', 387)->pluck('username', 'id')->all();
-  // return App\Store::find(83);
+  
+
+  // return App\User::with(array('store'=>function($query){
+  //   $query->select('id');
+  // }))->select('id','username')->where('id', 387)->get();
+  // // return App\User::with('store')->where('id', 387)->get('id', 'username');
+  // return App\User::where('id', 387)->pluck('username', 'id')->all();
+  // // return App\Store::find(83);
 
 });
 
