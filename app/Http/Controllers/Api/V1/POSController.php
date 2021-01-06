@@ -495,12 +495,13 @@ class POSController extends Controller
     if ($user['is_active'] == 1) {
 
       if ($user['type'] == 'driver')
-        $orders = Order::where('last_status', '!=', 'new')->where('last_status', '!=', 'pending')->where('last_status', '!=', '	
-      rejected')->where('driver_status', 'new')->get();
+        // if($user->count_available_orders < 1)
+          $orders = Order::where('last_status', '!=', 'new')->where('last_status', '!=', 'pending')->where('last_status', '!=', 'rejected')->where('driver_status', 'new')->get();
+        // else
+        //   return null;
       elseif ($user['type'] == 'merchant')
         $orders = Order::where('merchant_id', $user['id'])->where('last_status', 'new')->get();
     } else {
-
       $orders = [];
     }
 

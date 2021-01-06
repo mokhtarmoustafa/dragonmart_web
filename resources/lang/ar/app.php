@@ -629,10 +629,14 @@ return [
             'offers' => 'العروض',
             'Promotion_Codes' => 'أكواد الخصم',
             'New' => 'جديد',
+            'No Driver' => 'لايوجد سائق',
+            'Accepted' => 'مقبول',
             'In Progress' => 'تحت التجهيز',
             'Received' => 'أستلمه السائق',
+            'Pickd up' => 'تم تسليمه للسائق',
             'Completed' => 'جاهز للتسليم',
             'Delivering' => 'في الطريق',
+            'store_arrival' => 'السائق عند المتجر',
             'client_arrival' => 'السائق عند الباب',
             'delivered' => 'تم التوصيل بنجاح',
             'Order status' => 'حالة الطلب',
@@ -720,6 +724,10 @@ return [
             'Offline' => 'غير متصل',
             'disabled' => 'معطل',
             'Total' => 'المجموع',
+
+            'Orders Following up' => 'متابعة الطلبات',
+
+
 
 
         ] 

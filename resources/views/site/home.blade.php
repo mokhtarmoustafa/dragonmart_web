@@ -92,7 +92,7 @@
 								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-gallery">
 										<div>الصور</div>
 									</a></li>
-								<li class="menu-item menu-item-emphasis"><a class="menu-link" href="#modal-login" data-lightbox="inline">
+								<li class="menu-item menu-item-emphasis"><a class="menu-link" href="{{url('/') . admin_login_url()}}">
 										<div>تسجيل الدخول</div>
 									</a></li>
 							</ul>

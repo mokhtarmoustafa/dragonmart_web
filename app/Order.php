@@ -19,6 +19,8 @@ class Order extends Model
         'store',
         'order_user',
         'order_status', //
+        'merchant_status',
+        'driver_status',
         'order_products',
         'delivery_method',
         'revenue',
@@ -127,6 +129,20 @@ class Order extends Model
         $order_status = $this->OrderStatus()->orderByDesc('created_at')->first();
 
         return $order_status;
+    }
+
+    public function getMerchantStatusAttribute()
+    {
+        $merchant_status = $this->OrderStatus()->where('edit_at', 'last_status')->orderByDesc('created_at')->first();
+
+        return $merchant_status;
+    }
+
+    public function getDriverStatusAttribute()
+    {
+        $driver_status = $this->OrderStatus()->where('edit_at', 'driver_status')->orderByDesc('created_at')->first();
+
+        return $driver_status;
     }
 
     public function getStatusesAttribute()

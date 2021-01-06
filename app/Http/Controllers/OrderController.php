@@ -44,6 +44,25 @@ class OrderController extends Controller
         return view(admin_order_vw() . '.index', $data);
     }
 
+    public function orderFollowingUp()
+    {
+        $orders = Order::where('driver_status', '!=', 'delivered')->where('last_status', '!=', 'canceled')->where('last_status', '!=', 'rejected')->where('last_status', '!=', 'pending')->orderByDesc('created_at')->get();
+        
+        $data = [
+            'main_title' => 'Orders Following Up',
+            'orders' => $orders,
+        ];
+
+        return view('admin.orders_followup', $data);
+    }
+
+    public function orderFollowingUpData()
+    {
+        $orders = Order::where('driver_status', '!=', 'delivered')->where('last_status', '!=', 'canceled')->where('last_status', '!=', 'rejected')->where('last_status', '!=', 'pending')->orderByDesc('created_at')->get();
+
+        return $orders;
+    }
+
     public function clientOrdersData($client_id)
     {
         return $this->order->clientOrdersData($client_id);

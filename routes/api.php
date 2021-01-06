@@ -17,12 +17,16 @@
 use Damas\Paytabs\paytabs;
 
 if (request()->hasHeader('lang'))
-app()->setLocale(request()->header('lang'));
+  app()->setLocale(request()->header('lang'));
 
-Route::get('test', function(){
+Route::get('test', function () {
 
-  
 
+  $store_products = App\Product::where('category_id', 700)->paginate(15);
+
+  return $store_products;
+  $store = App\User::find(409);
+  $store_categories = App\ProductCategory::where('store_id', $store->id)->pluck('id')->all();
   // return App\User::with(array('store'=>function($query){
   //   $query->select('id');
   // }))->select('id','username')->where('id', 387)->get();
@@ -230,16 +234,16 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
     // API KEY 425BB3336356AA17EBB1C54BF143F
     // Route::post('POS/category/new' , 'POSController@CategoryNew');
     // Route::post('POS/category/update' , 'POSController@CategoryUpdate');
-    Route::post('POS/category/{action}' , 'POSController@CategoryAction');
+    Route::post('POS/category/{action}', 'POSController@CategoryAction');
 
     // Route::post('POS/product/new' , 'POSController@ProductNew');
     // Route::post('POS/product/update' , 'POSController@ProductUpdate');
-    Route::post('POS/product/{action}' , 'POSController@ProductAction');
+    Route::post('POS/product/{action}', 'POSController@ProductAction');
 
 
-    Route::get('POS/docs' , 'POSController@docs');
+    Route::get('POS/docs', 'POSController@docs');
 
-    Route::get('POS/orders' , 'POSController@getorders');
+    Route::get('POS/orders', 'POSController@getorders');
 
     Route::post('NewAddress', 'UserController@NewAddress');
 
@@ -268,19 +272,21 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
 
 
-    Route::post('payment' , 'POSController@payment');
-    Route::get('payment/success' , 'POSController@payment_success');
-    Route::get('payment/cancel' , 'POSController@payment_cancel');
-    Route::get('payment/declined' , 'POSController@payment_declined');
+    Route::post('payment', 'POSController@payment');
+    Route::get('payment/success', 'POSController@payment_success');
+    Route::get('payment/cancel', 'POSController@payment_cancel');
+    Route::get('payment/declined', 'POSController@payment_declined');
 
 
-    Route::post('order/{action}' , 'POSController@orderAction');
-    Route::post('order/{action}' , 'POSController@orderAction');
+    Route::post('order/{action}', 'POSController@orderAction');
+    Route::post('order/{action}', 'POSController@orderAction');
 
 
-    Route::post('CheckPromotionCode' , 'POSController@CheckPromotionCode');
+    Route::post('CheckPromotionCode', 'POSController@CheckPromotionCode');
 
-
-
+    //New Api's Ibrahim&Sherif
+    Route::get('getCategories/{id}', 'UserController@getCategories');
+    
+    Route::get('getProductsByCatId/{catId}', 'UserController@getProductsByCatId');
   });
 });

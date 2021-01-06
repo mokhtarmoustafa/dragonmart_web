@@ -8,6 +8,15 @@
       "icon": "svg/icons/Layout/Layout-arrange.svg"
     },
     {
+      "url": "following_up",
+      "name": "Orders Following up",
+      "i18n": "Orders_Following_up",
+      "slug": "following_up",
+      "icon": "svg/icons/Layout/Layout-grid.svg",
+      "new-tab": true,
+      "auth": "admin"
+    },
+    {
       "url": "role/roles",
       "name": "Roles",
       "i18n": "Roles",

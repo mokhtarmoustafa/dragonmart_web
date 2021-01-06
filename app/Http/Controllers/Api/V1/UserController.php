@@ -20,6 +20,8 @@ use App\ResetPassword;
 use Carbon\Carbon;
 use Mobily;
 use Illuminate\Support\Facades\Hash;
+use App\ProductCategory;
+use App\Product;
 
 class UserController extends Controller
 {
@@ -253,7 +255,25 @@ class UserController extends Controller
     }
 
 
-
+    public function getCategories($id)
+    {
+        $cats =  ProductCategory::where('store_id',  $id)
+                ->whereNull('deleted_at')
+                ->select(['id', 'name', 'name_ar'])
+                ->orderByRaw('-order_by DESC')
+                ->orderByDesc('created_at')->get();
+                
+       return $cats;
+    }
+    
+    public function getProductsByCatId($catId)
+    {
+        $products =  Product::where('category_id',  $catId)
+                ->select(['id', 'name', 'name_en', 'price'])
+                ->orderByDesc('created_at')->paginate(15);
+                
+       return $products;
+    }
 
 
 }

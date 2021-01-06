@@ -48,7 +48,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'has_freelancer_driver',
         'driver_follow_type',
         'driver_type',
-        'unseen_notifications'
+        'unseen_notifications',
+        'count_available_orders',
     ]; // 'app_shipments',
 
 
@@ -326,6 +327,14 @@ class User extends Authenticatable implements MustVerifyEmail
         if ($this->type == 'merchant') {
             return Order::where('merchant_id', $this->id)->where('last_status', 'finished')->sum(DB::raw('products_price + shipment_price'));
 
+        }
+        return null;
+    }
+
+    public function getCountAvailableOrdersAttribute()
+    {
+        if ($this->type == 'driver') {
+            return Order::where('driver_id', $this->id)->where('driver_status', '!=', 'delivered')->where('last_status', 'finished')->count();
         }
         return null;
     }

@@ -259,20 +259,17 @@ $(document).ready(function () {
                 if (
                     ((data['order_status'] == 'accepted' || data['order_status'] == 'progress') && data['status_duration'] < '00:30:00')
                     || (((data['order_status'] == 'finished' && data['driver_status'] == 'new') || (data['order_status'] == 'pickup' && data['driver_status'] == 'receive')) && data['status_duration'] < '00:25:00')
-                    ) 
-                {
+                ) {
                     $(row).addClass('bg-light-success');
                 }
                 else if (
                     ((data['order_status'] == 'accepted' || data['order_status'] == 'progress') && (data['status_duration'] > '00:30:00' && data['status_duration'] < '00:40:00'))
-                    || (((data['order_status'] == 'finished' && data['driver_status'] == 'new') || (data['order_status'] == 'pickup' && data['driver_status'] == 'receive')) 
-                    && (data['status_duration'] > '00:25:00' && data['status_duration'] < '00:30:00'))
-                ) 
-                {
+                    || (((data['order_status'] == 'finished' && data['driver_status'] == 'new') || (data['order_status'] == 'pickup' && data['driver_status'] == 'receive'))
+                        && (data['status_duration'] > '00:25:00' && data['status_duration'] < '00:30:00'))
+                ) {
                     $(row).addClass('bg-light-warning');
                 }
-                else
-                {
+                else {
                     $(row).addClass('bg-light-danger');
                 }
             },
@@ -1285,7 +1282,7 @@ $(document).ready(function () {
         var _this = $(this);
         // var loader = '<i class="fa fa-spinner fa-spin"></i>';
         _this.find('.btn.save i').addClass('fa-spinner fa-spin');
-        event.preventDefault(); 
+        event.preventDefault();
         // Totally stop stuff happening
         // START A LOADING SPINNER HERE
         // Create a formdata object and add the files

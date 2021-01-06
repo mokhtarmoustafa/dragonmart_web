@@ -10,12 +10,12 @@ class Adv extends Model
     //
     use SoftDeletes;
 
-    protected $appends = ['image100', 'image300'];
+    protected $appends = ['image100', 'image300', 'merchant_image'];
 
 
     public function Merchant()
     {
-        return $this->belongsTo(Admin::class, 'merchant_id');
+        return $this->belongsTo(User::class, 'merchant_id');
     }
 
     public function getImage100Attribute()
@@ -33,6 +33,10 @@ class Adv extends Model
         if (isset($value))
             return url('storage/app/advs/' . $this->id) . '/' . $value;
         return null;
+    }
+
+    public function getMerchantImageAttribute(){
+        return $this->Merchant['image'];
     }
 
 

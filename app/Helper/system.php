@@ -118,6 +118,11 @@ function admin_dashboard_url()
     return '/admin/home';
 }
 
+function admin_login_url()
+{
+    return '/admin/login';
+}
+
 function admin_user_tab_url()
 {
     return '/admin/users';

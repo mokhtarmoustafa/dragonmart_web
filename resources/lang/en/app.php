@@ -717,6 +717,8 @@ return [
             'disabled' => 'disabled',
             'Total' => 'Total',
 
+            'Orders Following up' => 'Orders Following up',
+
             
             ]
         

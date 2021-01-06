@@ -587,6 +587,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     //    Route::get('/order/{id}', 'OrderController@orderDet');
     Route::get('/orders/{type}', 'OrderController@ordersByType');
+    Route::get('/following_up', 'OrderController@orderFollowingUp');
+    Route::get('/following_up_data', 'OrderController@orderFollowingUpData');
 
     Route::get('/report-orders-data/{status}', 'OrderController@reportOrdersData');
     Route::get('/client-orders-data/{client_id}', 'OrderController@clientOrdersData');

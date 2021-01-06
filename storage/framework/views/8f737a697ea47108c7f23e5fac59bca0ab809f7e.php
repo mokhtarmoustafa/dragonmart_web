@@ -6,8 +6,8 @@
 					<div class="brand flex-column-auto" id="kt_brand">
 
 						<!--begin::Logo-->
-						<a href="{{url('/')}}" class="brand-logo">
-							<img alt="Logo" src="{{url('assets/img/logo_text.png')}}" class="py-2 mt-2" />
+						<a href="<?php echo e(url('/')); ?>" class="brand-logo">
+							<img alt="Logo" src="<?php echo e(url('assets/img/logo_text.png')); ?>" class="py-2 mt-2" />
 						</a>
 
 						<!--end::Logo-->
@@ -43,10 +43,10 @@
 							<!--begin::Menu Nav-->
 							<ul class="menu-nav">
 
-								@foreach ($AsideMenu as $MenuItem)
-								    @if( (isset($MenuItem['auth']) && $MenuItem['auth'] == getAuth()->type) || !isset($MenuItem['auth']) )
-								      <li class="menu-item @if(isset($MenuItem['submenu'])) menu-item-submenu @endif " aria-haspopup="true" data-menu-toggle="hover">
-								      	<a @if(!isset($MenuItem['submenu'])) href="{{url(getAuth()->type.'/'.$MenuItem['url'])}}" @endif @if(isset($MenuItem['new-tab']) && $MenuItem['new-tab']) target="_blank" @endif class="menu-link menu-toggle">
+								<?php $__currentLoopData = $AsideMenu; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $MenuItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+								    <?php if( (isset($MenuItem['auth']) && $MenuItem['auth'] == getAuth()->type) || !isset($MenuItem['auth']) ): ?>
+								      <li class="menu-item <?php if(isset($MenuItem['submenu'])): ?> menu-item-submenu <?php endif; ?> " aria-haspopup="true" data-menu-toggle="hover">
+								      	<a <?php if(!isset($MenuItem['submenu'])): ?> href="<?php echo e(url(getAuth()->type.'/'.$MenuItem['url'])); ?>" <?php endif; ?> <?php if(isset($MenuItem['new-tab']) && $MenuItem['new-tab']): ?> target="_blank" <?php endif; ?> class="menu-link menu-toggle">
 								      		<span class="svg-icon menu-icon">
 
 		  						    			<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -54,32 +54,32 @@
 
 		  						    			<!--end::Svg Icon-->
 								      		</span>
-								      		<span class="menu-text">{{trans(lang_app_site().'.CP.'.$MenuItem['name'])}}</span>
-								      		@if(isset($MenuItem['submenu'])) <i class="menu-arrow"></i> @endif
+								      		<span class="menu-text"><?php echo e(trans(lang_app_site().'.CP.'.$MenuItem['name'])); ?></span>
+								      		<?php if(isset($MenuItem['submenu'])): ?> <i class="menu-arrow"></i> <?php endif; ?>
 								      	</a>
-								      	@if(isset($MenuItem['submenu']))
+								      	<?php if(isset($MenuItem['submenu'])): ?>
 								      	<div class="menu-submenu">
 								      		<i class="menu-arrow"></i>
 								      		<ul class="menu-subnav">
-								      			@foreach($MenuItem['submenu'] as $submenu)
-														 @if( (isset($submenu['auth']) && $submenu['auth'] == getAuth()->type) || !isset($submenu['auth']) )
+								      			<?php $__currentLoopData = $MenuItem['submenu']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $submenu): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+														 <?php if( (isset($submenu['auth']) && $submenu['auth'] == getAuth()->type) || !isset($submenu['auth']) ): ?>
 								      			<li class="menu-item " aria-haspopup="true">
-								      				<a href="{{url(getAuth()->type.'/'.$submenu['url'])}}" class="menu-link">
+								      				<a href="<?php echo e(url(getAuth()->type.'/'.$submenu['url'])); ?>" class="menu-link">
 								      					<i class="menu-bullet menu-bullet-dot">
 								      						<span></span>
 								      					</i>
-								      					<span class="menu-text">{{trans(lang_app_site().'.CP.'.$submenu['name'])}}</span>
+								      					<span class="menu-text"><?php echo e(trans(lang_app_site().'.CP.'.$submenu['name'])); ?></span>
 								      				</a>
 								      			</li>
-														@endif
-													@endforeach
+														<?php endif; ?>
+													<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 										</ul>
 									</div>
-									@endif
+									<?php endif; ?>
 
 								</li>
-								 @endif
-								@endforeach
+								 <?php endif; ?>
+								<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 							</ul>
 
@@ -93,3 +93,4 @@
 				</div>
 
 				<!--end::Aside-->
+<?php /**PATH C:\xampp\htdocs\dragon_mart_web\resources\views/partials/_aside.blade.php ENDPATH**/ ?>

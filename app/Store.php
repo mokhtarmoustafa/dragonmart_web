@@ -67,7 +67,7 @@ class Store extends Model
         }
 
         // Close tomorow?
-        if ($close_time < $open_time) {
+        if ($close_time < $open_time) { 
             $close_tomorow = true;
         }
 
