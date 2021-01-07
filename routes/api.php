@@ -21,6 +21,11 @@ if (request()->hasHeader('lang'))
 
 Route::get('test', function () {
 
+  return  App\Store::whereHas('categories', function ($q) {
+    $q->where('id', 18);
+  })->get();
+
+
 
   $store_products = App\Product::where('category_id', 700)->paginate(15);
 
@@ -286,7 +291,7 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
     //New Api's Ibrahim&Sherif
     Route::get('getCategories/{id}', 'UserController@getCategories');
-    
+
     Route::get('getProductsByCatId/{catId}', 'UserController@getProductsByCatId');
   });
 });

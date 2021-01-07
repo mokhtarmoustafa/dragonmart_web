@@ -1,4 +1,4 @@
-<!-- <link href="{{url('/assets')}}/site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+{{-- <link href="{{url('/assets')}}/site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="{{url('/assets')}}/site/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
 <link href="{{url('/assets')}}/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="{{url('/assets')}}/site/css/animate.min.css" rel="stylesheet">
@@ -10,7 +10,7 @@
 <link href="{{url('/assets')}}/site/css/ovic-mobile-menu.css" rel="stylesheet">
 <link href="{{url('/assets')}}/site/css/jquery.datetimepicker.min.css" rel="stylesheet">
 <link href="{{url('/assets')}}/site/css/style.css" rel="stylesheet">
-<link href="{{url('/assets')}}/site/css/customs-css.css" rel="stylesheet"> -->
+<link href="{{url('/assets')}}/site/css/customs-css.css" rel="stylesheet">  --}}
 
 
 <!-- Favicon Icon -->
@@ -69,6 +69,7 @@
 	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/bs-switches.css" type="text/css" />
 	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/colors.php?color=267DF4" type="text/css" />
 	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/custom.css" type="text/css" />
+	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/edited.css" type="text/css" />
 
 
 @if(session()->has('lang') && session()->get('lang') == 'ar')

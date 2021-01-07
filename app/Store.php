@@ -15,7 +15,7 @@ class Store extends Model
 
     public function Merchant()
     {
-        return $this->belongsTo(Admin::class, 'merchant_id');
+        return $this->belongsTo(User::class, 'merchant_id');
     }
 
     public function Categories()

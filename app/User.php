@@ -109,7 +109,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function Store()
     {
-        return $this->hasOne(Store::class, 'merchant_id', 'id')->orderByDesc('updated_at');
+        return $this->hasMany(Store::class, 'merchant_id', 'id')->get();
     }
 
     public function Bank()

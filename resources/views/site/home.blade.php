@@ -33,98 +33,83 @@
 
 		<!-- Header
 		============================================= -->
-		<header id="header" class="transparent-header dark" data-sticky-class="not-dark" data-responsive-class="not-dark" data-sticky-logo-height="80" data-sticky-menu-padding="29">
+		<header id="header" class="transparent-header dark" data-sticky-class="not-dark"
+			data-responsive-class="not-dark" data-sticky-logo-height="55" data-sticky-menu-padding="29">
 			<div id="header-wrap">
 				<div class="container">
 					<div class="header-row justify-content-lg-between">
 
-						<!-- Logo
-						============================================= -->
+						<!-- Logo ============================================= -->
 						<div id="logo" class="col-auto order-lg-2 mr-lg-0 px-0">
-							<a href="index.html" class="standard-logo" data-dark-logo="{{url('/assets')}}/site/app-landing/images/logo-dark.png"><img src="{{url('/assets')}}/site/app-landing/images/logo.png" alt="Canvas Logo"></a>
-							<a href="index.html" class="retina-logo" data-dark-logo="{{url('/assets')}}/site/app-landing/images/logo-dark@2x.png"><img src="{{url('/assets')}}/site/app-landing/images/logo@2x.png" alt="Canvas Logo"></a>
-						</div><!-- #logo end -->
-
-						<div id="primary-menu-trigger">
-							<svg class="svg-trigger" viewBox="0 0 100 100">
-								<path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
-								<path d="m 30,50 h 40"></path>
-								<path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
-							</svg>
+							<a href="home" class="standard-logo"
+								data-dark-logo="{{url('/assets')}}/site/app-landing/images/logo-dark.png"><img
+									src="{{url('/assets')}}/site/app-landing/images/logo.png" alt="Canvas Logo"></a>
 						</div>
+						<!-- #logo end -->
 
 						<!-- Primary Navigation
 						============================================= -->
 						<nav class="primary-menu with-arrows not-dark col-lg-5 order-lg-1 px-0">
 
-							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="160">
-								<li class="menu-item"><a class="menu-link" href="#" data-href="#wrapper">
-										<div>الرئيسية</div>
-									</a></li>
-								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-nextgen">
-										<div>أكتشف</div>
+							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1250"
+								data-offset="160">
+								<li class="menu-item">
+									<a href="#" class="social-icon si-borderless si-twitter" title="Twitter">
+										<i class="icon-twitter icon-2x"></i>
+										<i class="icon-twitter icon-2x"></i>
 									</a>
-									<ul class="sub-menu-container">
-										<li class="menu-item"><a class="menu-link" href="#" data-href="#section-nextgen">
-												<div>NextGen Framework</div>
-											</a></li>
-										<li class="menu-item"><a class="menu-link" href="#" data-href="#section-stunning-graphics">
-												<div>Stunning Graphics</div>
-											</a></li>
-										<li class="menu-item"><a class="menu-link" href="#" data-href="#section-secured-solutions">
-												<div>Secured Solutions</div>
-											</a></li>
-									</ul>
 								</li>
-								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-pricing">
-										<div>الأسعار</div>
-									</a></li>
+								<li class="menu-item">
+									<a href="#" class="social-icon si-borderless si-snapchat" title="Snapchat">
+										<i class="icon-snapchat-ghost icon-2x"></i>
+										<i class="icon-snapchat-ghost icon-2x"></i>
+									</a>
+								</li>
+								<li class="menu-item">
+									<a href="#" class="social-icon si-borderless si-instagram" title="Instagram">
+										<i class="icon-instagram icon-2x"></i>
+										<i class="icon-instagram icon-2x"></i>
+									</a>
+								</li>
 							</ul>
 
 						</nav>
-
-						<nav class="primary-menu not-dark col-lg-5 order-lg-3 px-0">
-
-							<ul class="menu-container justify-content-lg-end one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="160">
-								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-faqs">
-										<div>الأسئلة الشائعة</div>
-									</a></li>
-								<li class="menu-item"><a class="menu-link" href="#" data-href="#section-gallery">
-										<div>الصور</div>
-									</a></li>
-								<li class="menu-item menu-item-emphasis"><a class="menu-link" href="{{url('/') . admin_login_url()}}">
-										<div>تسجيل الدخول</div>
-									</a></li>
-							</ul>
-
-						</nav><!-- #primary-menu end -->
-
 					</div>
 				</div>
 			</div>
 			<div class="header-wrap-clone"></div>
 		</header><!-- #header end -->
 
-		<section id="slider" class="slider-element slider-parallax min-vh-60 min-vh-md-100 include-header">
-			<div class="slider-inner" style="background: url('{{url('/assets')}}/site/css/home/hero.jpg') center center no-repeat; background-size: cover;">
+		<section id="slider" class="slider-element slider-parallax min-vh-60 min-vh-md-100 include-header vh-100">
+			<div class="slider-inner"
+				style="background: url('{{url('/assets')}}/site/css/home/02@3x.jpg') center center no-repeat; background-size: cover;">
 
 				<div class="vertical-middle slider-element-fade">
 					<div class="container dark py-5 py-md-0">
-						<div class="row">
-							<div class="col-lg-6 col-md-8">
-								<div class="emphasis-title">
-									<H1><span  class="text-primary">دراغون مارت</span></H1>
-									<h1><span class="text-white">تطبيق الكتروني متخصص لتسويق و توصيل المنتجات وتقديم الخدمات.</span></h1>
+						<div class="d-flex justify-content-center">
+							<div class="col-md-auto">
+								<div class="row justify-content-md-center"><img class="image-logo"
+										src="{{url('/assets')}}/site/app-landing/images/dm-logo.png" alt="DM Logo">
 								</div>
-								<a href="#" data-scrollto="#section-pricing" data-easing="easeInOutExpo" data-speed="1250" data-offset="160" class="button button-large button-white button-light text-capitalize" style="border-radius: 23px;">Try it Free</a>
-								<a href="https://www.youtube.com/watch?v=N_r349riLEE" class="hero-action-link" data-lightbox="iframe"><i class="icon-play-sign"></i> Watch the Video</a>
+								<div class="col-sm-12 text-center">
+									<h1 class="name">دراغون مارت</h1>
+									<p class="sub_title">تطبيق الكتروني متخصص لتسويق و توصيل المنتجات و الخدمات</p>
+								</div>
+
 							</div>
 						</div>
-					</div>
-				</div>
+						<div class="d-flex justify-content-center">
+							<div class="col-md-auto">
+								<div class="arrow_container">
+									<span class="circle">
+										<i class="fa fa-arrow-down"></i>
+									</span>
+									{{-- <span class="pulse"></span> --}}
+								</div>
+							</div>
+						</div>
 
-				<div class="video-wrap">
-					<div class="video-overlay" style="background: rgba(0,0,0,0.2);"></div>
+					</div>
 				</div>
 
 			</div>
@@ -133,32 +118,20 @@
 		<!-- Content
 		============================================= -->
 		<section id="content">
-			<div class="content-wrap">
+			<div class="content-wrap" style="padding: 0;">
 
-				<!-- Modal -->
-				<div class="modal1 mfp-hide" id="modal-login">
-					<div class="block mx-auto" style="background-color: #FFF; max-width: 400px;">
-						<div style="padding: 50px;">
-							<h3 class="font-body">Login to your Account</h3>
-							<form action="#" method="post" class="row mb-0">
-								<div class="col-12 form-group">
-									<label class="font-body text-capitalize" for="login-form-modal-username">Username:</label>
-									<input type="text" id="login-form-modal-username" name="login-form-modal-username" value="" class="form-control" />
+				<div class="page-section section p-0 topmargin-sm app_download"
+					style="margin-top: 0 !important;"
+					data-height-xl="600" data-height-lg="600">
+					<div class="container clearfix">
+						<div class="row clearfix">
+							<div class="col-lg-5">
+								
+								<div class="emphasis-title bottommargin-sm">
+									<h2 style="font-size: 42px;" class="font-body ls1 font-weight-normal">تطبيق الجوال</h2>
 								</div>
-
-								<div class="col-12 form-group">
-									<label class="font-body text-capitalize" for="login-form-modal-password">Password:</label>
-									<input type="password" id="login-form-modal-password" name="login-form-modal-password" value="" class="form-control" />
-								</div>
-
-								<div class="col-12 form-group">
-									<button class="button button-rounded m-0" id="login-form-modal-submit" name="login-form-modal-submit" value="login">Login</button>
-									<a href="#" class="float-right">Forgot Password?</a>
-								</div>
-							</form>
-							<div class="line line-sm"></div>
-							<a href="#" class="button button-rounded btn-block font-weight-normal center text-capitalize si-facebook si-colored mx-0">Login with Facebook</a>
-							<a href="#" class="button button-rounded btn-block font-weight-normal center text-capitalize si-gplus si-colored m-0">Login with Google</a>
+								<p style="color: #777;" class="lead">حمل تطبيق دراغون مارت وطلباتك واصلة لبيتك</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -168,19 +141,19 @@
 					<div id="section-nextgen" class="page-section bottommargin-lg">
 						<div class="row clearfix">
 
-							<div class="col-lg-7 center">
-								<img src="{{url('/assets')}}/site/app-landing/images/section/iphone-watch.png" alt="NextGen Framework" data-animate="fadeInLeft">
+							<div class="col-lg-5 about-us">
+								<div class="topmargin-lg d-none d-lg-block"></div>
+								<div class="emphasis-title bottommargin-sm">
+									<h2 class="font-body ls1 font-weight-normal">من نحن ؟</h2>
+								</div>
+								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing
+									elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
+								<a href="#" class="section-more-link">Learn More <i class="icon-angle-right"></i></a>
 							</div>
 
-							<div class="col-lg-5">
-								<div class="topmargin-lg d-none d-lg-block"></div>
-								<img src="{{url('/assets')}}/site/app-landing/images/section/section-1-icon.png" alt="Image" style="display: block;" class="bottommargin-sm">
-								<div class="emphasis-title bottommargin-sm">
-									<span class="before-heading">Plug into the</span>
-									<h2 style="font-size: 42px;" class="font-body ls1 font-weight-normal">NextGen Framework</h2>
-								</div>
-								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
-								<a href="#" class="section-more-link">Learn More <i class="icon-angle-right"></i></a>
+							<div class="col-lg-7 center">
+								<img src="{{url('/assets')}}/site/app-landing/images/section/iphone-watch.png"
+									alt="NextGen Framework" data-animate="fadeInLeft">
 							</div>
 
 						</div>
@@ -194,17 +167,21 @@
 
 							<div class="col-lg-5">
 								<div class="topmargin-lg d-none d-lg-block"></div>
-								<img src="{{url('/assets')}}/site/app-landing/images/section/section-2-icon.png" alt="Image" style="display: block;" class="bottommargin-sm">
+								<img src="{{url('/assets')}}/site/app-landing/images/section/section-2-icon.png"
+									alt="Image" style="display: block;" class="bottommargin-sm">
 								<div class="emphasis-title bottommargin-sm">
 									<span class="before-heading">Retina Ready &#x7E; 534 PPI</span>
-									<h2 style="font-size: 42px;" class="font-body ls1 font-weight-normal">Stunning Graphics</h2>
+									<h2 style="font-size: 42px;" class="font-body ls1 font-weight-normal">Stunning
+										Graphics</h2>
 								</div>
-								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
+								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing
+									elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
 								<a href="#" class="section-more-link">Learn More <i class="icon-angle-right"></i></a>
 							</div>
 
 							<div class="col-lg-7 center">
-								<img src="{{url('/assets')}}/site/app-landing/images/section/iphone-nexus.png" alt="Stunning Graphics" data-animate="fadeInRight">
+								<img src="{{url('/assets')}}/site/app-landing/images/section/iphone-nexus.png"
+									alt="Stunning Graphics" data-animate="fadeInLeft">
 							</div>
 
 						</div>
@@ -214,39 +191,20 @@
 					<div class="clear"></div>
 
 				</div>
-
-				<div id="section-secured-solutions" class="page-section section p-0 topmargin-sm" style="background: url('app-landing/images/section/iphone-3d-bg.png') no-repeat left bottom; background-size: 100% auto;" data-height-xl="700" data-height-lg="700" data-height-md="450" data-height-sm="450" data-height-xs="450">
-					<div class="container clearfix">
-						<div class="row clearfix">
-							<div class="col-lg-5 offset-lg-6">
-								<div class="topmargin-lg d-none d-lg-block"></div>
-								<div class="topmargin-lg d-none d-lg-block"></div>
-								<img src="{{url('/assets')}}/site/app-landing/images/section/section-3-icon.png" alt="Image" style="display: block;" class="bottommargin-sm">
-								<div class="emphasis-title bottommargin-sm">
-									<span class="before-heading">Privacy Protected</span>
-									<h2 style="font-size: 42px;" class="font-body ls1 font-weight-normal">Secured Solutions</h2>
-								</div>
-								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
-								<a href="#" class="section-more-link">Learn More <i class="icon-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="video-wrap" style="position: absolute; height: 100%; z-index: 1;">
-						<div class="video-overlay d-none d-lg-block" style="background: url('app-landing/images/section/iphone-3d.png') no-repeat left top; background-size: auto 100%;" data-animate="fadeInLeft"></div>
-					</div>
-				</div>
-
+				
 				<div class="clear bottommargin"></div>
 
 				<div class="container clearfix">
 
 					<div id="section-pricing" class="page-section p-0 m-0">
 
-						<div class="pricing-tenure-switcher row align-items-center justify-content-center mb-4" data-container="#pricing-switch">
+						<div class="pricing-tenure-switcher row align-items-center justify-content-center mb-4"
+							data-container="#pricing-switch">
 							<span class="pts-left font-weight-bold text-muted">Monthly</span>
 							<div class="pts-switcher mx-3">
 								<div class="switch">
-									<input id="switch-toggle-pricing-tenure" class="switch-toggle switch-toggle-round" type="checkbox">
+									<input id="switch-toggle-pricing-tenure" class="switch-toggle switch-toggle-round"
+										type="checkbox">
 									<label for="switch-toggle-pricing-tenure" class="mb-0"></label>
 								</div>
 							</div>
@@ -274,7 +232,10 @@
 										</ul>
 									</div>
 									<div class="pricing-action">
-										<a href="#modal-get-started" data-lightbox="inline" data-pricing-plan="Starter Plan" class="button button-large button-rounded text-capitalize ls0" style="border-radius: 23px;">Get Started</a>
+										<a href="#modal-get-started" data-lightbox="inline"
+											data-pricing-plan="Starter Plan"
+											class="button button-large button-rounded text-capitalize ls0"
+											style="border-radius: 23px;">Get Started</a>
 									</div>
 								</div>
 
@@ -287,8 +248,12 @@
 										<h3>Professional</h3>
 									</div>
 									<div class="pricing-price">
-										<div class="pts-switch-content-left"><span class="price-unit">&dollar;</span>12<span class="price-tenure">Monthly</span></div>
-										<div class="pts-switch-content-right"><span class="price-unit">&dollar;</span>99<span class="price-tenure">Yearly</span></div>
+										<div class="pts-switch-content-left"><span
+												class="price-unit">&dollar;</span>12<span
+												class="price-tenure">Monthly</span></div>
+										<div class="pts-switch-content-right"><span
+												class="price-unit">&dollar;</span>99<span
+												class="price-tenure">Yearly</span></div>
 									</div>
 									<div class="pricing-features border-0 bg-transparent">
 										<ul>
@@ -304,8 +269,14 @@
 										</ul>
 									</div>
 									<div class="pricing-action">
-										<div class="pts-switch-content-left"><a href="#modal-get-started" data-lightbox="inline" data-pricing-plan="Professional Monthly Plan" class="button button-large button-rounded text-capitalize ls0" style="border-radius: 23px;">Start Free Trial</a></div>
-										<div class="pts-switch-content-right"><a href="#modal-get-started" data-lightbox="inline" data-pricing-plan="Professional Yearly Plan" class="button button-large button-rounded text-capitalize ls0" style="border-radius: 23px;">Start Free Trial</a></div>
+										<div class="pts-switch-content-left"><a href="#modal-get-started"
+												data-lightbox="inline" data-pricing-plan="Professional Monthly Plan"
+												class="button button-large button-rounded text-capitalize ls0"
+												style="border-radius: 23px;">Start Free Trial</a></div>
+										<div class="pts-switch-content-right"><a href="#modal-get-started"
+												data-lightbox="inline" data-pricing-plan="Professional Yearly Plan"
+												class="button button-large button-rounded text-capitalize ls0"
+												style="border-radius: 23px;">Start Free Trial</a></div>
 									</div>
 								</div>
 
@@ -318,8 +289,12 @@
 										<h3>Business</h3>
 									</div>
 									<div class="pricing-price">
-										<div class="pts-switch-content-left"><span class="price-unit">&dollar;</span>19<span class="price-tenure">Monthly</span></div>
-										<div class="pts-switch-content-right"><span class="price-unit">&dollar;</span>149<span class="price-tenure">Yearly</span></div>
+										<div class="pts-switch-content-left"><span
+												class="price-unit">&dollar;</span>19<span
+												class="price-tenure">Monthly</span></div>
+										<div class="pts-switch-content-right"><span
+												class="price-unit">&dollar;</span>149<span
+												class="price-tenure">Yearly</span></div>
 									</div>
 									<div class="pricing-features border-0 bg-transparent">
 										<ul>
@@ -331,8 +306,14 @@
 										</ul>
 									</div>
 									<div class="pricing-action">
-										<div class="pts-switch-content-left"><a href="#modal-get-started" data-lightbox="inline" data-pricing-plan="Business Monthly Plan" class="button button-large button-rounded text-capitalize ls0" style="border-radius: 23px;">Start Free Trial</a></div>
-										<div class="pts-switch-content-right"><a href="#modal-get-started" data-lightbox="inline" data-pricing-plan="Business Yearly Plan" class="button button-large button-rounded text-capitalize ls0" style="border-radius: 23px;">Start Free Trial</a></div>
+										<div class="pts-switch-content-left"><a href="#modal-get-started"
+												data-lightbox="inline" data-pricing-plan="Business Monthly Plan"
+												class="button button-large button-rounded text-capitalize ls0"
+												style="border-radius: 23px;">Start Free Trial</a></div>
+										<div class="pts-switch-content-right"><a href="#modal-get-started"
+												data-lightbox="inline" data-pricing-plan="Business Yearly Plan"
+												class="button button-large button-rounded text-capitalize ls0"
+												style="border-radius: 23px;">Start Free Trial</a></div>
 									</div>
 								</div>
 
@@ -358,39 +339,58 @@
 
 										<div class="row">
 											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize" for="get-started-form-username">Choose Username:</label>
-												<input type="text" id="get-started-form-username" name="get-started-form-username" value="" class="form-control required no-error-msg" />
+												<label class="font-body text-capitalize"
+													for="get-started-form-username">Choose Username:</label>
+												<input type="text" id="get-started-form-username"
+													name="get-started-form-username" value=""
+													class="form-control required no-error-msg" />
 											</div>
 
 											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize" for="get-started-form-email">Your Email:</label>
-												<input type="email" id="get-started-form-email" name="get-started-form-email" value="" class="form-control required email no-error-msg" />
+												<label class="font-body text-capitalize"
+													for="get-started-form-email">Your Email:</label>
+												<input type="email" id="get-started-form-email"
+													name="get-started-form-email" value=""
+													class="form-control required email no-error-msg" />
 											</div>
 
 											<div class="w-100"></div>
 
 											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize" for="get-started-form-password">Choose Password:</label>
-												<input type="password" id="get-started-form-password" name="get-started-form-password" value="" class="form-control required no-error-msg" />
+												<label class="font-body text-capitalize"
+													for="get-started-form-password">Choose Password:</label>
+												<input type="password" id="get-started-form-password"
+													name="get-started-form-password" value=""
+													class="form-control required no-error-msg" />
 											</div>
 
 											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize" for="get-started-form-password">Retype Password:</label>
-												<input type="password" id="get-started-form-repassword" name="get-started-form-repassword" value="" class="form-control required no-error-msg" />
+												<label class="font-body text-capitalize"
+													for="get-started-form-password">Retype Password:</label>
+												<input type="password" id="get-started-form-repassword"
+													name="get-started-form-repassword" value=""
+													class="form-control required no-error-msg" />
 											</div>
 
 											<!-- Package Selector Hidden Input Value Setter -->
-											<input type="hidden" id="get-started-form-package" name="get-started-form-package" value="Free">
+											<input type="hidden" id="get-started-form-package"
+												name="get-started-form-package" value="Free">
 
 											<div class="col-12 form-group">
 												<label>
-													<input type="checkbox" id="get-started-form-agree" name="get-started-form-agree" value="1" style="position: relative; top: 2px; margin-right: 5px;"> I Agree to the Terms &amp; Conditions
+													<input type="checkbox" id="get-started-form-agree"
+														name="get-started-form-agree" value="1"
+														style="position: relative; top: 2px; margin-right: 5px;"> I
+													Agree to the Terms &amp; Conditions
 												</label>
 											</div>
 
 											<div class="col-12 form-group">
-												<button class="button button-rounded m-0" id="get-started-form-submit" name="get-started-form-submit" value="login">Get Started</button>
-												<a href="#" data-scrollto="#section-pricing" data-easing="easeInOutExpo" data-speed="1250" data-offset="160" class="float-right" onClick="$.magnificPopup.close();">Change Plan?</a>
+												<button class="button button-rounded m-0" id="get-started-form-submit"
+													name="get-started-form-submit" value="login">Get Started</button>
+												<a href="#" data-scrollto="#section-pricing" data-easing="easeInOutExpo"
+													data-speed="1250" data-offset="160" class="float-right"
+													onClick="$.magnificPopup.close();">Change Plan?</a>
 											</div>
 										</div>
 
@@ -411,27 +411,42 @@
 
 							<div class="col-lg-5 offset-lg-1 col-md-6 bottommargin-sm">
 								<h4 class="font-body" style="margin-bottom:15px;">How do I become an author?</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero
+									ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates
+									doloribus quae nisi.</p>
 							</div>
 							<div class="col-lg-5 col-md-6 bottommargin-sm">
 								<h4 class="font-body" style="margin-bottom:15px;">Helpful Resources for Authors</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, placeat, architecto rem dolorem dignissimos repellat veritatis in et eos doloribus magnam aliquam ipsa alias assumenda officiis quasi sapiente suscipit.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, placeat,
+									architecto rem dolorem dignissimos repellat veritatis in et eos doloribus magnam
+									aliquam ipsa alias assumenda officiis quasi sapiente suscipit.</p>
 							</div>
 							<div class="col-lg-5 offset-lg-1 col-md-6 bottommargin-sm">
 								<h4 class="font-body" style="margin-bottom:15px;">How much money can I make?</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, fugiat iste nisi tempore nesciunt nemo fuga? Nesciunt, delectus laboriosam nisi repudiandae nam fuga saepe animi recusandae.</p>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, fugiat iste nisi
+									tempore nesciunt nemo fuga? Nesciunt, delectus laboriosam nisi repudiandae nam fuga
+									saepe animi recusandae.</p>
 							</div>
 							<div class="col-lg-5 col-md-6 bottommargin-sm">
-								<h4 class="font-body" style="margin-bottom:15px;">Can I offer my items for free on a promotional basis?</h4>
-								<p>Laboriosam iusto quia nulla ad voluptatibus iste beatae voluptas corrupti facilis accusamus recusandae sequi debitis reprehenderit quibusdam. Facilis eligendi a exercitationem nisi et placeat excepturi velit!</p>
+								<h4 class="font-body" style="margin-bottom:15px;">Can I offer my items for free on a
+									promotional basis?</h4>
+								<p>Laboriosam iusto quia nulla ad voluptatibus iste beatae voluptas corrupti facilis
+									accusamus recusandae sequi debitis reprehenderit quibusdam. Facilis eligendi a
+									exercitationem nisi et placeat excepturi velit!</p>
 							</div>
 							<div class="col-lg-5 offset-lg-1 col-md-6 bottommargin-sm">
-								<h4 class="font-body" style="margin-bottom:15px;">An Introduction to the Marketplaces for Authors</h4>
-								<p>Quisquam atque vero delectus corrupti! Quo, maiores, dolorem, hic commodi nulla ratione accusamus doloribus fuga magnam id temporibus dignissimos deleniti quidem ipsam corporis sapiente nam expedita saepe quas ab? Vero, assumenda.</p>
+								<h4 class="font-body" style="margin-bottom:15px;">An Introduction to the Marketplaces
+									for Authors</h4>
+								<p>Quisquam atque vero delectus corrupti! Quo, maiores, dolorem, hic commodi nulla
+									ratione accusamus doloribus fuga magnam id temporibus dignissimos deleniti quidem
+									ipsam corporis sapiente nam expedita saepe quas ab? Vero, assumenda.</p>
 							</div>
 							<div class="col-lg-5 col-md-6">
-								<h4 class="font-body" style="margin-bottom:15px;">How does the Tuts+ Premium affiliate program work?</h4>
-								<p class="mb-0">Reprehenderit similique nemo voluptate ullam natus illum magnam alias nobis doloremque delectus ipsa dicta repellat maxime dignissimos eveniet quae debitis ratione assumenda tempore officiis fugiat dolor.</p>
+								<h4 class="font-body" style="margin-bottom:15px;">How does the Tuts+ Premium affiliate
+									program work?</h4>
+								<p class="mb-0">Reprehenderit similique nemo voluptate ullam natus illum magnam alias
+									nobis doloremque delectus ipsa dicta repellat maxime dignissimos eveniet quae
+									debitis ratione assumenda tempore officiis fugiat dolor.</p>
 							</div>
 
 						</div>
@@ -440,17 +455,21 @@
 
 				</div>
 
-				<div class="section bottommargin-lg" style="background-color: #F8FAFB; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5;">
+				<div class="section bottommargin-lg"
+					style="background-color: #F8FAFB; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5;">
 
-					<div class="fslider testimonial testimonial-full bg-transparent border-0 shadow-none" data-animation="fade" style="max-width: none;">
+					<div class="fslider testimonial testimonial-full bg-transparent border-0 shadow-none"
+						data-animation="fade" style="max-width: none;">
 						<div class="flexslider">
 							<div class="slider-wrap mx-auto" style="max-width: 650px;">
 								<div class="slide">
 									<div class="testi-image">
-										<a href="#"><img src="images/testimonials/3.jpg" alt="Customer Testimonails"></a>
+										<a href="#"><img src="images/testimonials/3.jpg"
+												alt="Customer Testimonails"></a>
 									</div>
 									<div class="testi-content">
-										<p>Similique fugit repellendus expedita excepturi iure provident quia eaque. Repellendus, vero numquam?</p>
+										<p>Similique fugit repellendus expedita excepturi iure provident quia eaque.
+											Repellendus, vero numquam?</p>
 										<div class="testi-meta">
 											Steve Jobs
 											<span>Apple Inc.</span>
@@ -459,10 +478,12 @@
 								</div>
 								<div class="slide">
 									<div class="testi-image">
-										<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+										<a href="#"><img src="images/testimonials/2.jpg"
+												alt="Customer Testimonails"></a>
 									</div>
 									<div class="testi-content">
-										<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+										<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos
+											obcaecati id culpa corporis molestias.</p>
 										<div class="testi-meta">
 											Collis Ta'eed
 											<span>Envato Inc.</span>
@@ -471,10 +492,12 @@
 								</div>
 								<div class="slide">
 									<div class="testi-image">
-										<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+										<a href="#"><img src="images/testimonials/1.jpg"
+												alt="Customer Testimonails"></a>
 									</div>
 									<div class="testi-content">
-										<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam quibusdam cum libero illo rerum!</p>
+										<p>Incidunt deleniti blanditiis quas aperiam recusandae consequatur ullam
+											quibusdam cum libero illo rerum!</p>
 										<div class="testi-meta">
 											John Doe
 											<span>XYZ Inc.</span>
@@ -493,34 +516,46 @@
 
 					<div class="container topmargin bottommargin-lg center clearfix">
 
-						<h3 class="ls1 font-weight-normal" style="font-size: 32px; margin-bottom: 10px;">App Screenshots</h3>
-						<p class="lead mx-auto" style="max-width: 600px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, repellendus quae fuga ad, beatae odit.</p>
+						<h3 class="ls1 font-weight-normal" style="font-size: 32px; margin-bottom: 10px;">App Screenshots
+						</h3>
+						<p class="lead mx-auto" style="max-width: 600px">Lorem ipsum dolor sit amet, consectetur
+							adipisicing elit. Id, repellendus quae fuga ad, beatae odit.</p>
 						<a href="#" class="button button-circle text-capitalize">Check All</a>
 
 					</div>
 
-					<div class="owl-carousel owl-carousel-full image-carousel carousel-widget bottommargin" data-margin="20" data-center="true" data-loop="true" data-nav="false" data-pagi="true" data-items-xs="2" data-items-sm="2" data-items-md="4" data-items-lg="4" data-items-xl="6" data-stage-padding="30" data-lightbox="gallery">
+					<div class="owl-carousel owl-carousel-full image-carousel carousel-widget bottommargin"
+						data-margin="20" data-center="true" data-loop="true" data-nav="false" data-pagi="true"
+						data-items-xs="2" data-items-sm="2" data-items-md="4" data-items-lg="4" data-items-xl="6"
+						data-stage-padding="30" data-lightbox="gallery">
 
 						<div class="oc-item">
-							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-1.jpg"><img src="app-landing/images/gallery/img-1.jpg" alt="Image 1"></a>
+							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-1.jpg"><img
+									src="app-landing/images/gallery/img-1.jpg" alt="Image 1"></a>
 						</div>
 						<div class="oc-item">
-							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-2.jpg"><img src="app-landing/images/gallery/img-2.jpg" alt="Image 2"></a>
+							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-2.jpg"><img
+									src="app-landing/images/gallery/img-2.jpg" alt="Image 2"></a>
 						</div>
 						<div class="oc-item">
-							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-3.jpg"><img src="app-landing/images/gallery/img-3.jpg" alt="Image 3"></a>
+							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-3.jpg"><img
+									src="app-landing/images/gallery/img-3.jpg" alt="Image 3"></a>
 						</div>
 						<div class="oc-item">
-							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-4.jpg"><img src="app-landing/images/gallery/img-4.jpg" alt="Image 4"></a>
+							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-4.jpg"><img
+									src="app-landing/images/gallery/img-4.jpg" alt="Image 4"></a>
 						</div>
 						<div class="oc-item">
-							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-5.jpg"><img src="app-landing/images/gallery/img-5.jpg" alt="Image 5"></a>
+							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-5.jpg"><img
+									src="app-landing/images/gallery/img-5.jpg" alt="Image 5"></a>
 						</div>
 						<div class="oc-item">
-							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-6.jpg"><img src="app-landing/images/gallery/img-6.jpg" alt="Image 5"></a>
+							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-6.jpg"><img
+									src="app-landing/images/gallery/img-6.jpg" alt="Image 5"></a>
 						</div>
 						<div class="oc-item">
-							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-7.jpg"><img src="app-landing/images/gallery/img-7.jpg" alt="Image 5"></a>
+							<a data-lightbox="gallery-item" href="app-landing/images/gallery/img-7.jpg"><img
+									src="app-landing/images/gallery/img-7.jpg" alt="Image 5"></a>
 						</div>
 
 					</div>
@@ -537,56 +572,69 @@
 					</div>
 				</div> -->
 
-				<div class="section" style="padding: 30px 0; color: #999; background-color: #F8FAFB; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5;">
+				<div class="section"
+					style="padding: 30px 0; color: #999; background-color: #F8FAFB; border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5;">
 					<div class="container clearfix">
 						<div class="row topmargin-lg clearfix">
 
 							<div class="col-lg-4 bottommargin">
-								<i class="i-plain i-large icon-et-browser inline-block" style="margin-bottom: 30px; color: #999;"></i>
+								<i class="i-plain i-large icon-et-browser inline-block"
+									style="margin-bottom: 30px; color: #999;"></i>
 								<div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
 									<h4 style="font-size: 16px;">Cross Browser</h4>
 								</div>
-								<p style="line-height: 26px;">Canvas 4 Loads Faster &amp; Smoother than the Previous Versions providing an Optimal Experience for your Users.</p>
+								<p style="line-height: 26px;">Canvas 4 Loads Faster &amp; Smoother than the Previous
+									Versions providing an Optimal Experience for your Users.</p>
 							</div>
 
 							<div class="col-lg-4 bottommargin">
-								<i class="i-plain i-large icon-et-adjustments inline-block" style="margin-bottom: 30px; color: #999;"></i>
+								<i class="i-plain i-large icon-et-adjustments inline-block"
+									style="margin-bottom: 30px; color: #999;"></i>
 								<div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
 									<h4 style="font-size: 16px;">Flexible Options</h4>
 								</div>
-								<p style="line-height: 26px;">Unleash the Power of Mega Menus by adding Widgets &amp; Mixed Columns powered by the Bootstrap Grid.</p>
+								<p style="line-height: 26px;">Unleash the Power of Mega Menus by adding Widgets &amp;
+									Mixed Columns powered by the Bootstrap Grid.</p>
 							</div>
 
 							<div class="col-lg-4 bottommargin">
-								<i class="i-plain i-large icon-et-calendar inline-block" style="margin-bottom: 30px; color: #999;"></i>
+								<i class="i-plain i-large icon-et-calendar inline-block"
+									style="margin-bottom: 30px; color: #999;"></i>
 								<div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
 									<h4 style="font-size: 16px;">Scheduled Backups</h4>
 								</div>
-								<p style="line-height: 26px;">Amazing set of New Components giving you Opportunity to Create an Interactive Website for your Business.</p>
+								<p style="line-height: 26px;">Amazing set of New Components giving you Opportunity to
+									Create an Interactive Website for your Business.</p>
 							</div>
 
 							<div class="col-lg-4 bottommargin">
-								<i class="i-plain i-large icon-et-desktop inline-block" style="margin-bottom: 30px; color: #999;"></i>
+								<i class="i-plain i-large icon-et-desktop inline-block"
+									style="margin-bottom: 30px; color: #999;"></i>
 								<div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
 									<h4 style="font-size: 16px;">Responsive Ready</h4>
 								</div>
-								<p style="line-height: 26px;">Convert any Grid to an Isotope Grid easily with Filterable Options making it extremely flexible and powerful.</p>
+								<p style="line-height: 26px;">Convert any Grid to an Isotope Grid easily with Filterable
+									Options making it extremely flexible and powerful.</p>
 							</div>
 
 							<div class="col-lg-4 bottommargin">
-								<i class="i-plain i-large icon-et-bargraph inline-block" style="margin-bottom: 30px; color: #999;"></i>
+								<i class="i-plain i-large icon-et-bargraph inline-block"
+									style="margin-bottom: 30px; color: #999;"></i>
 								<div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
 									<h4 style="font-size: 16px;">Increased Conversions</h4>
 								</div>
-								<p style="line-height: 26px;">Display an Alternate Lighter Menu on Responsive Devices with the same Markup Code as before. Awesomely Useful.</p>
+								<p style="line-height: 26px;">Display an Alternate Lighter Menu on Responsive Devices
+									with the same Markup Code as before. Awesomely Useful.</p>
 							</div>
 
 							<div class="col-lg-4 bottommargin">
-								<i class="i-plain i-large icon-et-cloud inline-block" style="margin-bottom: 30px; color: #999;"></i>
+								<i class="i-plain i-large icon-et-cloud inline-block"
+									style="margin-bottom: 30px; color: #999;"></i>
 								<div class="heading-block border-bottom-0" style="margin-bottom: 15px;">
 									<h4 style="font-size: 16px;">Cloud Sharing</h4>
 								</div>
-								<p style="line-height: 26px;">Added SPAM Protection for your Precious Forms so that you receive Emails only from Authentic Real Users.</p>
+								<p style="line-height: 26px;">Added SPAM Protection for your Precious Forms so that you
+									receive Emails only from Authentic Real Users.</p>
 							</div>
 
 						</div>
@@ -596,32 +644,41 @@
 				<div class="section center mb-0 bg-transparent">
 					<div class="container clearfix">
 
-						<h3 class="ls1 font-weight-normal" style="font-size: 32px;">Experienced &amp; Trusted by <span>50,000+</span> People worldwide</h3>
-						<a href="#modal-login" data-lightbox="inline" class="button button-large button-black text-capitalize" style="border-radius: 23px;">Login Now</a>
-						<a href="#" data-scrollto="#section-pricing" data-easing="easeInOutExpo" data-speed="1250" data-offset="160" class="button button-large text-capitalize" style="border-radius: 23px;">Try it Free</a>
+						<h3 class="ls1 font-weight-normal" style="font-size: 32px;">Experienced &amp; Trusted by
+							<span>50,000+</span> People worldwide</h3>
+						<a href="#modal-login" data-lightbox="inline"
+							class="button button-large button-black text-capitalize" style="border-radius: 23px;">Login
+							Now</a>
+						<a href="#" data-scrollto="#section-pricing" data-easing="easeInOutExpo" data-speed="1250"
+							data-offset="160" class="button button-large text-capitalize"
+							style="border-radius: 23px;">Try it Free</a>
 
 						<div class="clear bottommargin"></div>
 
 					</div>
 				</div>
 
-				<div class="section mt-0 footer-stick" style="padding: 10px 0; background-color: #F8FAFB; border-top: 1px solid #E5E5E5;">
+				<div class="section mt-0 footer-stick"
+					style="padding: 10px 0; background-color: #F8FAFB; border-top: 1px solid #E5E5E5;">
 					<div class="container clearfix">
 
 						<div class="row clearfix">
 							<div class="col-lg-4">
 								<div class="app-footer-features"><i class="icon-line2-globe-alt"></i>
-									<h5 class="font-body"><a href="#">Free Training</a><span> &amp; 24-hour coverage</span></h5>
+									<h5 class="font-body"><a href="#">Free Training</a><span> &amp; 24-hour
+											coverage</span></h5>
 								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="app-footer-features"><i class="icon-line2-notebook"></i>
-									<h5 class="font-body"><a href="#">99.99% Uptime</a><span> the last 12 months</span></h5>
+									<h5 class="font-body"><a href="#">99.99% Uptime</a><span> the last 12 months</span>
+									</h5>
 								</div>
 							</div>
 							<div class="col-lg-4">
 								<div class="app-footer-features"><i class="icon-line2-lock"></i>
-									<h5 class="font-body"><span>Serious about</span> <a href="#">Security</a> <span>&amp;</span> <a href="#">Privacy</a></h5>
+									<h5 class="font-body"><span>Serious about</span> <a href="#">Security</a>
+										<span>&amp;</span> <a href="#">Privacy</a></h5>
 								</div>
 							</div>
 						</div>
@@ -647,30 +704,37 @@
 							<div class="widget clearfix">
 								<div class="row clearfix">
 									<div class="col-lg-8 bottommargin-sm clearfix" style="color:#888;">
-										<img src="app-landing/images/footer-logo.png" alt="Canvas Logo" style="display: block;" class="bottommargin-sm">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, consequatur facere molestiae iusto atque.</p>
+										<img src="app-landing/images/footer-logo.png" alt="Canvas Logo"
+											style="display: block;" class="bottommargin-sm">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, consequatur
+											facere molestiae iusto atque.</p>
 
-										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-facebook">
+										<a href="#"
+											class="social-icon si-small si-borderless si-colored si-rounded si-facebook">
 											<i class="icon-facebook"></i>
 											<i class="icon-facebook"></i>
 										</a>
 
-										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-twitter">
+										<a href="#"
+											class="social-icon si-small si-borderless si-colored si-rounded si-twitter">
 											<i class="icon-twitter"></i>
 											<i class="icon-twitter"></i>
 										</a>
 
-										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-gplus">
+										<a href="#"
+											class="social-icon si-small si-borderless si-colored si-rounded si-gplus">
 											<i class="icon-gplus"></i>
 											<i class="icon-gplus"></i>
 										</a>
 
-										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-pinterest">
+										<a href="#"
+											class="social-icon si-small si-borderless si-colored si-rounded si-pinterest">
 											<i class="icon-pinterest"></i>
 											<i class="icon-pinterest"></i>
 										</a>
 
-										<a href="#" class="social-icon si-small si-borderless si-colored si-rounded si-vimeo">
+										<a href="#"
+											class="social-icon si-small si-borderless si-colored si-rounded si-vimeo">
 											<i class="icon-vimeo"></i>
 											<i class="icon-vimeo"></i>
 										</a>
@@ -690,7 +754,9 @@
 
 										<ul>
 											<li><a href="https://codex.wordpress.org/">Documentation</a></li>
-											<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+											<li><a
+													href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>
+											</li>
 											<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
 											<li><a href="https://wordpress.org/support/">Support Forums</a></li>
 											<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
@@ -703,7 +769,9 @@
 
 										<ul>
 											<li><a href="https://codex.wordpress.org/">Documentation</a></li>
-											<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+											<li><a
+													href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>
+											</li>
 											<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
 											<li><a href="https://wordpress.org/support/">Support Forums</a></li>
 											<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
@@ -716,7 +784,9 @@
 
 										<ul>
 											<li><a href="https://codex.wordpress.org/">Documentation</a></li>
-											<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+											<li><a
+													href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>
+											</li>
 											<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
 											<li><a href="https://wordpress.org/support/">Support Forums</a></li>
 											<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>

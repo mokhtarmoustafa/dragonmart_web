@@ -1,0 +1,300 @@
+.name {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    font-size: 1rem;
+    font-size: 30px;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,dbdbdb+50,757575+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(
+        top,
+        #ffffff 0%,
+        #dbdbdb 50%,
+        #757575 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        top,
+        #ffffff 0%,
+        #dbdbdb 50%,
+        #757575 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #dbdbdb 50%,
+        #757575 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#757575',GradientType=0 ); /* IE6-9 */
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sub_title {
+    font-size: 20px;
+    margin-bottom: 0;
+    color: #dbdbdb;
+}
+
+.image-logo{
+  width: 200px;
+  height: auto;
+}
+
+.arrow_down {
+    height: 77px;
+    padding: 20px 3px;
+    border-radius: 18.3px;
+    border: solid 2px #fbad18;
+
+    position: fixed;
+    bottom: 38px;
+    z-index: -1;
+}
+
+#logo img {
+  height: 60px;
+}
+
+/*
+  Arrow
+*/
+
+
+* {
+  box-sizing: border-box;
+}
+.arrow_container {
+  height: 120px;
+  width: 120px;
+  margin: 250px auto 0;
+  
+  position: fixed;
+    bottom: 20px;
+    z-index: -1;
+
+}
+.circle {
+  background-color: transparent;
+  height: 70px;
+  /* width: 120px; */
+  padding: 20px 17px;
+  display: block;
+  border: 2px solid #fbad18;
+  border-radius: 100px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  animation-name:circle;
+  animation-duration:1s;
+  animation-timing-function:linear;
+  animation-delay:0s;
+  animation-iteration-count:infinite;
+  animation-direction:normal;
+  animation-play-state:running;
+  -webkit-animation-name:circle;
+  -webkit-animation-duration:1s;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay:0s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:normal;
+  -webkit-animation-play-state:running;
+}
+.fa {
+  font-size: 25px;
+  color: #fbad18;
+  font-weight: 600;
+  bottom: 27px;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  animation-name:arrow;
+  animation-duration:1s;
+  animation-timing-function:linear;
+  animation-delay:0s;
+  animation-iteration-count:infinite;
+  animation-direction:normal;
+  animation-play-state:running;
+  -webkit-animation-name:arrow;
+  -webkit-animation-duration:1s;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay:0s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:normal;
+  -webkit-animation-play-state:running;
+}
+.pulse {
+	margin: 0 auto;
+	border-radius: 100px;
+	position: absolute;
+  left: 67px;
+	bottom: 0;
+	z-index: 0;
+	background-color: transparent;
+	opacity: 50%;
+  /* width: 110px; */
+  padding: 20px 20px;
+	height: 97px;
+	border: 10px solid #fbad18;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+	-ms-border-radius: 100px;
+	border-radius: 100px;
+  /* Giving Animation Function */
+  /* animation: pulse 1s linear infinite 0.3s; */
+	-webkit-animation: pulse 1s linear infinite 0.3s;
+  -moz-animation: pulse 1s linear infinite 0.3s; 
+	border-image: initial;
+}
+
+@keyframes arrow
+	{
+	0%   {bottom:0;}
+	75% {bottom:50px;}
+	100% {bottom:0;}
+	}
+@-webkit-keyframes arrow
+	{
+	0%   {bottom:0;}
+  75% {bottom:50px;}
+	100% {bottom:0;}
+  }
+@keyframes circle
+	{
+    0%   {height:70px;}
+    10% {height: 70px;}
+    50% {height: 75px;}
+    75% {height: 85px;}
+    90% {height: 75px;}
+    100% {height: 70px;}
+	}
+@-webkit-keyframes circle
+	{
+    0%   {height:70px;}
+    10% {height: 70px;}
+    50% {height: 75px;}
+    75% {height: 85px;}
+    90% {height: 75px;}
+    100% {height: 70px;}
+	}
+@-webkit-keyframes pulse {       
+  0% {-webkit-transform: scale(0); opacity: 0;}
+  8% {-webkit-transform: scale(0); opacity: 0;}
+  15% {-webkit-transform: scale(0.1); opacity: 1;}
+  30% {-webkit-transform: scale(0.5); opacity: 1;}
+  100% {opacity: 0; -webkit-transform: scale(1.5);}
+}
+@-moz-keyframes pulse {       
+  0% {-webkit-transform: scale(0); opacity: 0;}
+  8% {-webkit-transform: scale(0); opacity: 0;}
+  15% {-webkit-transform: scale(0.1); opacity: 1;}
+  30% {-webkit-transform: scale(0.5); opacity: 1;}
+  100% {opacity: 0; -webkit-transform: scale(1.5);}
+}
+
+/*---------------------------------------------------------*/
+
+
+.app_download{
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+18,fbad18+48,d33e54+100 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(15deg,  #ffffff 45%, #ed996f 80%, #e68167 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(15deg,  #ffffff 45%,#ed996f 80%,#e68167 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(15deg,  #ffffff 45%,#ed996f 80%,#e68167 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d33e54',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.about-us h2{
+  font-size: 100px;
+  font-family: 'Expo Arabic', sans-serif !important;
+}
+
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+    .name {
+        font-size: 1.5rem;
+        font-size: 25px;
+    } /*1rem = 16px*/
+
+    .sub_title {
+      font-size: 20px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+    .name {
+        font-size: 100px;
+    } /*1rem = 16px*/
+
+    .sub_title {
+      font-size: 30px;
+    }
+
+    .image-logo{
+      width: 270px;
+      height: auto;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .name {
+        font-size: 115px;
+    } /*1rem = 16px*/
+
+    .sub_title {
+      font-size: 35px;
+    }
+
+    .image-logo{
+      width: 290px;
+      height: auto;
+    }
+
+    #logo img {
+      height: 50px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .name {
+        font-size: 126px;
+    } /*1rem = 16px*/
+
+    .sub_title {
+      font-size: 35px;
+    }
+
+    .image-logo{
+      width: 311px;
+      height: auto;
+    }
+}
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Custom media queries
+*/
+
+/* Set width to make card deck cards 100% width */
+/* @media (min-width: 950px) and (max-width: 1100px) {
+    .name {
+        font-size: 2.75rem;
+        color: red;
+    }
+} */

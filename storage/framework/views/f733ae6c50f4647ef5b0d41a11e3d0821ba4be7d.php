@@ -1,16 +1,4 @@
-<!-- <link href="<?php echo e(url('/assets')); ?>/site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="<?php echo e(url('/assets')); ?>/site/css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-<link href="<?php echo e(url('/assets')); ?>/site/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="<?php echo e(url('/assets')); ?>/site/css/animate.min.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/magnific-popup.min.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/jquery-ui.min.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/jquery.scrollbar.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/chosen.min.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/ovic-mobile-menu.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/jquery.datetimepicker.min.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/style.css" rel="stylesheet">
-<link href="<?php echo e(url('/assets')); ?>/site/css/customs-css.css" rel="stylesheet"> -->
+
 
 
 <!-- Favicon Icon -->
@@ -69,6 +57,7 @@
 	<link rel="stylesheet" href="<?php echo e(url('/assets')); ?>/site/css/home/bs-switches.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo e(url('/assets')); ?>/site/css/home/colors.php?color=267DF4" type="text/css" />
 	<link rel="stylesheet" href="<?php echo e(url('/assets')); ?>/site/css/home/custom.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo e(url('/assets')); ?>/site/css/home/edited.css" type="text/css" />
 
 
 <?php if(session()->has('lang') && session()->get('lang') == 'ar'): ?>
