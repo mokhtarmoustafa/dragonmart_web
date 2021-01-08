@@ -125,16 +125,32 @@
 					data-height-xl="600" data-height-lg="600">
 					<div class="container clearfix">
 						<div class="row clearfix">
-							<div class="col-lg-5">
+
+							<div class="col-lg-7" style="margin-top: 100px;">
 								
 								<div class="emphasis-title bottommargin-sm">
-									<h2 style="font-size: 42px;" class="font-body ls1 font-weight-normal">تطبيق الجوال</h2>
+									<h2 class="font-body ls1 font-weight-normal"><strong>تطبيق الجوال</strong></h2>
 								</div>
-								<p style="color: #777;" class="lead">حمل تطبيق دراغون مارت وطلباتك واصلة لبيتك</p>
+								<p>حمل تطبيق دراغون مارت وطلباتك واصلة لبيتك</p>
+
+								<div class="row">
+									<div class="col-lg-6 center">
+										<img src="{{url('/assets')}}/site/app-landing/images/app_download/group-1.png"
+											alt="NextGen Framework" data-animate="fadeInRight">
+									</div>
+									<div class="col-lg-6 center">
+										<img src="{{url('/assets')}}/site/app-landing/images/app_download/group-2.png"
+											alt="NextGen Framework" data-animate="fadeInRight">
+									</div>
+								</div>
 							</div>
+							
 						</div>
 					</div>
+					<div class="line"></div>
 				</div>
+
+				
 
 				<div class="container clearfix">
 

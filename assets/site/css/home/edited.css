@@ -207,6 +207,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
 }
 
+.app_download h2{
+  font-size: 80px;
+  font-family: 'Expo Arabic', sans-serif !important;
+  color: #252525;
+}
+
+.app_download p{
+  font-size: 37px;
+  color: #252525;
+}
+
 .about-us h2{
   font-size: 100px;
   font-family: 'Expo Arabic', sans-serif !important;
