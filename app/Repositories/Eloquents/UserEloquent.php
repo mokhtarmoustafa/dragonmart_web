@@ -883,12 +883,13 @@ class UserEloquent extends Uploader implements UserRepository
 
 
         if (\request()->segment(1) == 'api') {
-            $user = $this->model->where('id', $id)->first(['id', 'username', 'email', 'mobile', 'image', 'type', 'is_driver_available', 'lang', 'city_id']);
+            $user = $this->model->where('id', $id)->first(['id', 'username', 'mobile', 'image', 'type', 'is_driver_available', 'lang', 'city_id']);
+            
         } else {
             $user = $this->model->find($id);
         }
 
-        
+
         // $Cats =  ProductCategory::where('product_categories.store_id',  $id)
         //          ->whereNull('products.deleted_at')
         //          ->select(['product_categories.id', 'product_categories.name' , 'product_categories.name_ar'])
@@ -898,94 +899,109 @@ class UserEloquent extends Uploader implements UserRepository
 
         if ($user['type'] == "merchant") {
 
+            $user->makeHidden(['address', 'service_rate', 'count_pending_request', 'count_accepted_request', 'count_rejected_request', 'count_finished_request',
+                                'services', 'image100', 'image300', 'vehicle', 'count_order_sent', 'count_product_sent', 'total_revenue', 'order_bought', 'order_pending',
+                                'order_canceled', 'count_available_orders']);
 
-            $Cats =  ProductCategory::where('product_categories.store_id',  $id)
-                ->whereNull('product_categories.deleted_at')
-                ->select(['product_categories.id', 'product_categories.name', 'product_categories.name_ar'])
-                ->orderByRaw('-order_by DESC')
-                ->orderByDesc('product_categories.created_at')->get();
+            $user['stores'] = $user->Stores->makeHidden(['merchant_id', 'description', 'open_times', 'close_times', 'state_times', 'deleted_at', 'created_at', 'updated_at', 'categories']);
+            //get Categories
+            // get all of the category for the merchant
+            // $Cats =  ProductCategory::where('store_id',  $id)
+            //     ->whereNull('deleted_at')
+            //     ->select(['id', 'name', 'name_ar'])
+            //     ->orderByRaw('-order_by DESC')
+            //     ->orderByDesc('created_at')->get();
+            
+            $user['product_categories'] = $user->ProductCategories->makeHidden(['reference_id', 'order_by', 'description', 'icon', 'store_id', 'parent_id', 'deleted_at', 'created_at', 'updated_at', 'icon32']);
+            
+            // $remove_cat  = array();
+            // if (!$login) {
+                // for ($i = 0; $i < count($Cats); $i++) {
+                //     $Cat = json_decode(json_encode($Cats[$i]), true);
+                //     $Product = Product::whereNull('deleted_at')->where('category_id',  $Cats[$i]['id'])->orderByDesc('created_at')->get(['id', 'name', 'price', 'available_quantity', 'merchant_id']);
+                //     if (count($Product) > 0) {
+                //         $Cats[$i]['Products'] = $Product;
+                //     } else {
+                //         $Cats[$i]['Products'] = array();
+                //     }
+                // }
 
-            $remove_cat  = array();
-            if (!$login) {
-                for ($i = 0; $i < count($Cats); $i++) {
-                    $Cat = json_decode(json_encode($Cats[$i]), true);
-                    $Product = Product::whereNull('deleted_at')->where('category_id',  $Cats[$i]['id'])->orderByDesc('created_at')->get(['id', 'name', 'price', 'available_quantity', 'merchant_id']);
-                    if (count($Product) > 0) {
-                        $Cats[$i]['Products'] = $Product;
-                    } else {
-                        $Cats[$i]['Products'] = array();
-                    }
-                }
-                $user['Storecat'] = $Cats;
-            }
-            $user['ads'] = Adv::where('merchant_id', $id)->orderByDesc('created_at')->get();
+            // }
+            // End get Categories
 
-            $dayname = gmdate("l", strtotime('+ 3 hour'));
-            $dayBeforename = gmdate("l", strtotime('-1 day + 3 hour'));
+            // $user['adv'] = Adv::where('merchant_id', $id)->orderByDesc('created_at')->get();
 
+            $user['advertisements'] = $user->Advertisements->where('status', 1)->makeHidden(['merchant_id', 'status', 'deleted_at', 'created_at', 'updated_at', 'image100', 'image300', 'merchant']);
 
-            $Branches = Store::where('merchant_id', $user->id)->whereNotNull('open_times')->get();
-            $BranchesArray =  array();
-
-            $dayBefore = gmdate("d h:i a", strtotime('-1 day + 3 hour'));
-
-            foreach ($Branches as $Branche) {
-                $day = gmdate("Y-m-d h:i a", strtotime('+ 3 hour'));
-                $dayHOR = gmdate("h", strtotime('+ 3 hour'));
-                $dayPER = gmdate("a", strtotime('+ 3 hour'));
-                $Branche['close_times'] = json_decode($Branche['close_times'], true);
-                $Branche['open_times'] = json_decode($Branche['open_times'], true);
-                $Branche['state_times'] = json_decode($Branche['state_times'], true);
-
-                $PER = date("a", strtotime($Branche['close_times'][$dayBeforename]));
-                $hor = date("h", strtotime($Branche['close_times'][$dayBeforename]));
-                $CTB = date("Y-m-d h:i a", ($PER == "am" && $hor == "12") || $PER == "pm" ? strtotime($Branche['close_times'][$dayname]) : strtotime($Branche['close_times'][$dayBeforename]));
-                $CTB = date("Y-m-d h:i a", ($PER == "am" && $hor == "12") || $PER == "pm" ? strtotime($CTB) : strtotime('-1 day', strtotime($CTB)));
-
-                $CT = strtotime($Branche['close_times'][$dayname]);
-                $DDay = ($PER == "am" && $hor == "12") || $PER == "pm" ? $dayname :  $dayBeforename;
-
-                if ($Branche['state_times'][$DDay] == 1) {
-                    $close_times = date("Y-m-d h:i a", strtotime($Branche['close_times'][$DDay]));
-                    $close_times = date("Y-m-d h:i a", ($PER == "am" && $hor == "12") || $PER == "pm" ? strtotime('+1 day',  strtotime($close_times)) : strtotime('-1 day', strtotime($close_times)));
-                    $open_times = date("Y-m-d h:i a", strtotime($Branche['open_times'][$dayname]));
-                    $open_times = strtotime($open_times);
-                    $cc = strtotime($close_times);
-                    $day = strtotime($day);
-
-                    if ($DDay == $dayBeforename) {
-                        if ($dayPER == "am" && $dayHOR < "12") {
-                            $cc = date("Y-m-d h:i a", strtotime('+1 day', strtotime($close_times)));
-                        } else if ($dayPER == "pm" &&  $dayHOR <= "12") {
-                            $cc = date("Y-m-d h:i a", strtotime('+2 day', strtotime($close_times)));
-                        }
-
-                        $cc = strtotime($cc);
-
-                        if ($cc >= $day && $open_times <= $day) {
-                            array_push($BranchesArray, $Branche);
-                        }
-                    } else if ($DDay == $dayname) {
-                        //                 print($dayPER . " % ");
-                        // print($dayHOR . " % ");
-                        // print($day . " % ");
-                        //     print($open_times. " - ");
-                        //     print(date("Y-m-d h:i a" , $cc). " / ");
+            // $dayname = gmdate("l", strtotime('+ 3 hour'));
+            // $dayBeforename = gmdate("l", strtotime('-1 day + 3 hour'));
 
 
-                        if ($cc >= $day && $open_times <= $day) {
-                            array_push($BranchesArray, $Branche);
-                        }
-                    }
-                }
-            }
-            $user['Branches'] = $BranchesArray;
+            // $Branches = Store::where('merchant_id', $user->id)->whereNotNull('open_times')->get();
+
+            // $BranchesArray =  array();
+
+            // $dayBefore = gmdate("d h:i a", strtotime('-1 day + 3 hour'));
+
+            // foreach ($Branches as $Branche) {
+            //     $day = gmdate("Y-m-d h:i a", strtotime('+ 3 hour'));
+            //     $dayHOR = gmdate("h", strtotime('+ 3 hour'));
+            //     $dayPER = gmdate("a", strtotime('+ 3 hour'));
+            //     $Branche['close_times'] = json_decode($Branche['close_times'], true);
+            //     $Branche['open_times'] = json_decode($Branche['open_times'], true);
+            //     $Branche['state_times'] = json_decode($Branche['state_times'], true);
+
+            //     $PER = date("a", strtotime($Branche['close_times'][$dayBeforename]));
+            //     $hor = date("h", strtotime($Branche['close_times'][$dayBeforename]));
+            //     $CTB = date("Y-m-d h:i a", ($PER == "am" && $hor == "12") || $PER == "pm" ? strtotime($Branche['close_times'][$dayname]) : strtotime($Branche['close_times'][$dayBeforename]));
+            //     $CTB = date("Y-m-d h:i a", ($PER == "am" && $hor == "12") || $PER == "pm" ? strtotime($CTB) : strtotime('-1 day', strtotime($CTB)));
+
+            //     $CT = strtotime($Branche['close_times'][$dayname]);
+            //     $DDay = ($PER == "am" && $hor == "12") || $PER == "pm" ? $dayname :  $dayBeforename;
+
+            //     if ($Branche['state_times'][$DDay] == 1) {
+            //         $close_times = date("Y-m-d h:i a", strtotime($Branche['close_times'][$DDay]));
+            //         $close_times = date("Y-m-d h:i a", ($PER == "am" && $hor == "12") || $PER == "pm" ? strtotime('+1 day',  strtotime($close_times)) : strtotime('-1 day', strtotime($close_times)));
+            //         $open_times = date("Y-m-d h:i a", strtotime($Branche['open_times'][$dayname]));
+            //         $open_times = strtotime($open_times);
+            //         $cc = strtotime($close_times);
+            //         $day = strtotime($day);
+
+            //         if ($DDay == $dayBeforename) {
+            //             if ($dayPER == "am" && $dayHOR < "12") {
+            //                 $cc = date("Y-m-d h:i a", strtotime('+1 day', strtotime($close_times)));
+            //             } else if ($dayPER == "pm" &&  $dayHOR <= "12") {
+            //                 $cc = date("Y-m-d h:i a", strtotime('+2 day', strtotime($close_times)));
+            //             }
+
+            //             $cc = strtotime($cc);
+
+            //             if ($cc >= $day && $open_times <= $day) {
+            //                 array_push($BranchesArray, $Branche);
+            //             }
+            //         } else if ($DDay == $dayname) {
+            //             //                 print($dayPER . " % ");
+            //             // print($dayHOR . " % ");
+            //             // print($day . " % ");
+            //             //     print($open_times. " - ");
+            //             //     print(date("Y-m-d h:i a" , $cc). " / ");
+
+
+            //             if ($cc >= $day && $open_times <= $day) {
+            //                 array_push($BranchesArray, $Branche);
+            //             }
+            //         }
+            //     }
+            // }
+            // $user['Branches'] = $Branches;
+
+            $user->makeHidden(['merchant_products', 'merchant_categories', 'city']);
         }
 
         $user['address'] = DB::table('user_address')->where('user_id', $user->id)->get();
 
 
-        if (\request()->segment(1) != 'admin' && \request()->segment(1) != 'merchant'){
+        if (\request()->segment(1) != 'admin' && \request()->segment(1) != 'merchant') {
             if (\request()->segment(1) == 'api' || \request()->ajax()) {
                 if (isset($user)) {
                     return response_api(true, 200, null, $user);
@@ -994,7 +1010,6 @@ class UserEloquent extends Uploader implements UserRepository
             }
         }
         return $user;
-
     }
 
 

@@ -144,6 +144,16 @@
 									</div>
 								</div>
 							</div>
+							<div class="col-lg-5 row screenshot_container">
+								<div class="col-lg-6 screenshot2">
+									<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/app_download/02.png"
+										alt="NextGen Framework">
+								</div>
+								<div class="col-lg-6 screenshot1">
+									<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/app_download/01.png"
+										alt="NextGen Framework">
+								</div>
+							</div>
 							
 						</div>
 					</div>

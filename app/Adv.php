@@ -11,6 +11,7 @@ class Adv extends Model
     use SoftDeletes;
 
     protected $appends = ['image100', 'image300', 'merchant_image'];
+    protected $hidden = ['Merchant'];
 
 
     public function Merchant()

@@ -15,6 +15,7 @@ use Damas\Paytabs\paytabs;
 
 Route::get('opentime', function(){
 
+    return App\User::findOrFail(545)->Categories;
     return App\Store::find(83);
 
 });

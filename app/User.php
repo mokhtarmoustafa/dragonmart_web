@@ -35,10 +35,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'count_order_sent',
         'count_product_sent',
         'total_revenue',
-        'store_images',
-        'merchant_products',
-        'store',
-        'merchant_categories',
+        // 'store_images',
+        // 'merchant_products',
+        // 'store',
+        // 'merchant_categories',
         'order_bought',
         'order_pending',
         'order_canceled',
@@ -107,9 +107,19 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(DriverType::class, MerchantDeliveryMethod::class, 'merchant_id', 'driver_type_id', 'id', 'id');
     }
 
-    public function Store()
+    public function Advertisements()
     {
-        return $this->hasMany(Store::class, 'merchant_id', 'id')->get();
+        return $this->hasMany(Adv::class, 'merchant_id');
+    }
+
+    public function ProductCategories()
+    {
+        return $this->hasMany(ProductCategory::class, 'store_id')->whereNull('deleted_at');
+    }
+
+    public function Stores()
+    {
+        return $this->hasMany(Store::class, 'merchant_id', 'id');
     }
 
     public function Bank()
@@ -198,22 +208,22 @@ class User extends Authenticatable implements MustVerifyEmail
         return null;
     }
 
-    public function getStoreAttribute()
-    {
-        if ($this->type == 'merchant') {
-            return $this->Store()->first();
-        }
-        return null;
-    }
+    // public function getStoreAttribute()
+    // {
+    //     if ($this->type == 'merchant') {
+    //         return $this->Stores()->get();
+    //     }
+    //     return null;
+    // }
 
-    public function getMerchantCategoriesAttribute()
-    {
-        if ($this->type == 'merchant') {
-            $store = $this->Store()->first();
-            return isset($store) ? $store->categories : null;
-        }
-        return null;
-    }
+    // public function getMerchantCategoriesAttribute()
+    // {
+    //     if ($this->type == 'merchant') {
+    //         $store = $this->Stores()->first();
+    //         return isset($store) ? $store->categories : null;
+    //     }
+    //     return null;
+    // }
 
     public function getServiceRateAttribute()
     {
@@ -348,13 +358,13 @@ class User extends Authenticatable implements MustVerifyEmail
 //        return null;
     }
 
-    public function getStoreImagesAttribute()
-    {
-        if ($this->type == 'merchant') {
-            return $this->StoreImages()->get();
-        }
-        return null;
-    }
+    // public function getStoreImagesAttribute()
+    // {
+    //     if ($this->type == 'merchant') {
+    //         return $this->StoreImages()->get();
+    //     }
+    //     return null;
+    // }
 
     public function getOrderBoughtAttribute()
     {
@@ -382,14 +392,14 @@ class User extends Authenticatable implements MustVerifyEmail
         return null;
     }
 
-    public function getMerchantProductsAttribute()
-    {
-        if (request()->segment(1) == 'api' && request()->segment(3) == 'profile' && $this->type == 'merchant') {
-            $product = $this->MerchantProducts()->take(2)->get();
-            return $product;
-        }
-        return null;
-    }
+    // public function getMerchantProductsAttribute()
+    // {
+    //     if (request()->segment(1) == 'api' && request()->segment(3) == 'profile' && $this->type == 'merchant') {
+    //         $product = $this->MerchantProducts()->take(2)->get();
+    //         return $product;
+    //     }
+    //     return null;
+    // }
 
     public function getVehicleAttribute()
     {

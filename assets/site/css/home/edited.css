@@ -37,9 +37,9 @@
     color: #dbdbdb;
 }
 
-.image-logo{
-  width: 200px;
-  height: auto;
+.image-logo {
+    width: 200px;
+    height: auto;
 }
 
 .arrow_down {
@@ -54,173 +54,264 @@
 }
 
 #logo img {
-  height: 60px;
+    height: 60px;
 }
 
 /*
   Arrow
 */
 
-
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 .arrow_container {
-  height: 120px;
-  width: 120px;
-  margin: 250px auto 0;
-  
-  position: fixed;
+    height: 120px;
+    width: 120px;
+    margin: 250px auto 0;
+
+    position: fixed;
     bottom: 20px;
     z-index: -1;
-
 }
 .circle {
-  background-color: transparent;
-  height: 70px;
-  /* width: 120px; */
-  padding: 20px 17px;
-  display: block;
-  border: 2px solid #fbad18;
-  border-radius: 100px;
-  position: absolute;
-  bottom: 0;
-  z-index: 1;
-  animation-name:circle;
-  animation-duration:1s;
-  animation-timing-function:linear;
-  animation-delay:0s;
-  animation-iteration-count:infinite;
-  animation-direction:normal;
-  animation-play-state:running;
-  -webkit-animation-name:circle;
-  -webkit-animation-duration:1s;
-  -webkit-animation-timing-function:linear;
-  -webkit-animation-delay:0s;
-  -webkit-animation-iteration-count:infinite;
-  -webkit-animation-direction:normal;
-  -webkit-animation-play-state:running;
+    background-color: transparent;
+    height: 70px;
+    /* width: 120px; */
+    padding: 20px 17px;
+    display: block;
+    border: 2px solid #fbad18;
+    border-radius: 100px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    animation-name: circle;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+    -webkit-animation-name: circle;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-play-state: running;
 }
 .fa {
-  font-size: 25px;
-  color: #fbad18;
-  font-weight: 600;
-  bottom: 27px;
-  position: absolute;
-  left: 50%;
-  margin-left: -10px;
-  animation-name:arrow;
-  animation-duration:1s;
-  animation-timing-function:linear;
-  animation-delay:0s;
-  animation-iteration-count:infinite;
-  animation-direction:normal;
-  animation-play-state:running;
-  -webkit-animation-name:arrow;
-  -webkit-animation-duration:1s;
-  -webkit-animation-timing-function:linear;
-  -webkit-animation-delay:0s;
-  -webkit-animation-iteration-count:infinite;
-  -webkit-animation-direction:normal;
-  -webkit-animation-play-state:running;
+    font-size: 25px;
+    color: #fbad18;
+    font-weight: 600;
+    bottom: 27px;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    animation-name: arrow;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-play-state: running;
+    -webkit-animation-name: arrow;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+    -webkit-animation-play-state: running;
 }
 .pulse {
-	margin: 0 auto;
-	border-radius: 100px;
-	position: absolute;
-  left: 67px;
-	bottom: 0;
-	z-index: 0;
-	background-color: transparent;
-	opacity: 50%;
-  /* width: 110px; */
-  padding: 20px 20px;
-	height: 97px;
-	border: 10px solid #fbad18;
-	-webkit-border-radius: 100px;
-	-moz-border-radius: 100px;
-	-o-border-radius: 100px;
-	-ms-border-radius: 100px;
-	border-radius: 100px;
-  /* Giving Animation Function */
-  /* animation: pulse 1s linear infinite 0.3s; */
-	-webkit-animation: pulse 1s linear infinite 0.3s;
-  -moz-animation: pulse 1s linear infinite 0.3s; 
-	border-image: initial;
+    margin: 0 auto;
+    border-radius: 100px;
+    position: absolute;
+    left: 67px;
+    bottom: 0;
+    z-index: 0;
+    background-color: transparent;
+    opacity: 50%;
+    /* width: 110px; */
+    padding: 20px 20px;
+    height: 97px;
+    border: 10px solid #fbad18;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -o-border-radius: 100px;
+    -ms-border-radius: 100px;
+    border-radius: 100px;
+    /* Giving Animation Function */
+    /* animation: pulse 1s linear infinite 0.3s; */
+    -webkit-animation: pulse 1s linear infinite 0.3s;
+    -moz-animation: pulse 1s linear infinite 0.3s;
+    border-image: initial;
 }
 
-@keyframes arrow
-	{
-	0%   {bottom:0;}
-	75% {bottom:50px;}
-	100% {bottom:0;}
-	}
-@-webkit-keyframes arrow
-	{
-	0%   {bottom:0;}
-  75% {bottom:50px;}
-	100% {bottom:0;}
-  }
-@keyframes circle
-	{
-    0%   {height:70px;}
-    10% {height: 70px;}
-    50% {height: 75px;}
-    75% {height: 85px;}
-    90% {height: 75px;}
-    100% {height: 70px;}
-	}
-@-webkit-keyframes circle
-	{
-    0%   {height:70px;}
-    10% {height: 70px;}
-    50% {height: 75px;}
-    75% {height: 85px;}
-    90% {height: 75px;}
-    100% {height: 70px;}
-	}
-@-webkit-keyframes pulse {       
-  0% {-webkit-transform: scale(0); opacity: 0;}
-  8% {-webkit-transform: scale(0); opacity: 0;}
-  15% {-webkit-transform: scale(0.1); opacity: 1;}
-  30% {-webkit-transform: scale(0.5); opacity: 1;}
-  100% {opacity: 0; -webkit-transform: scale(1.5);}
+@keyframes arrow {
+    0% {
+        bottom: 0;
+    }
+    75% {
+        bottom: 50px;
+    }
+    100% {
+        bottom: 0;
+    }
 }
-@-moz-keyframes pulse {       
-  0% {-webkit-transform: scale(0); opacity: 0;}
-  8% {-webkit-transform: scale(0); opacity: 0;}
-  15% {-webkit-transform: scale(0.1); opacity: 1;}
-  30% {-webkit-transform: scale(0.5); opacity: 1;}
-  100% {opacity: 0; -webkit-transform: scale(1.5);}
+@-webkit-keyframes arrow {
+    0% {
+        bottom: 0;
+    }
+    75% {
+        bottom: 50px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes circle {
+    0% {
+        height: 70px;
+    }
+    10% {
+        height: 70px;
+    }
+    50% {
+        height: 75px;
+    }
+    75% {
+        height: 85px;
+    }
+    90% {
+        height: 75px;
+    }
+    100% {
+        height: 70px;
+    }
+}
+@-webkit-keyframes circle {
+    0% {
+        height: 70px;
+    }
+    10% {
+        height: 70px;
+    }
+    50% {
+        height: 75px;
+    }
+    75% {
+        height: 85px;
+    }
+    90% {
+        height: 75px;
+    }
+    100% {
+        height: 70px;
+    }
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    8% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    15% {
+        -webkit-transform: scale(0.1);
+        opacity: 1;
+    }
+    30% {
+        -webkit-transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+    }
+}
+@-moz-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    8% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+    15% {
+        -webkit-transform: scale(0.1);
+        opacity: 1;
+    }
+    30% {
+        -webkit-transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1.5);
+    }
 }
 
 /*---------------------------------------------------------*/
 
-
-.app_download{
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+18,fbad18+48,d33e54+100 */
-background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(15deg,  #ffffff 45%, #ed996f 80%, #e68167 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(15deg,  #ffffff 45%,#ed996f 80%,#e68167 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(15deg,  #ffffff 45%,#ed996f 80%,#e68167 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d33e54',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+.app_download {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+18,fbad18+48,d33e54+100 */
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(
+        15deg,
+        #ffffff 45%,
+        #ed996f 80%,
+        #e68167 100%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+        15deg,
+        #ffffff 45%,
+        #ed996f 80%,
+        #e68167 100%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+        15deg,
+        #ffffff 45%,
+        #ed996f 80%,
+        #e68167 100%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d33e54',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-.app_download h2{
-  font-size: 80px;
-  font-family: 'Expo Arabic', sans-serif !important;
-  color: #252525;
+.app_download h2 {
+    font-size: 80px;
+    font-family: "Expo Arabic", sans-serif !important;
+    color: #252525;
 }
 
-.app_download p{
-  font-size: 37px;
-  color: #252525;
+.app_download p {
+    font-size: 37px;
+    color: #252525;
 }
 
-.about-us h2{
-  font-size: 100px;
-  font-family: 'Expo Arabic', sans-serif !important;
+.app_download .screenshot_container {
+    position: relative;
+    padding: 5px;
+}
+
+.app_download .screenshot1 {
+    position: absolute;
+    left: 150px;
+    top: 0px;
+}
+
+.app_download .screenshot2 {
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.about-us h2 {
+    font-size: 100px;
+    font-family: "Expo Arabic", sans-serif !important;
 }
 
 /*
@@ -241,7 +332,7 @@ Bootstrap 4 breakpoints
     } /*1rem = 16px*/
 
     .sub_title {
-      font-size: 20px;
+        font-size: 20px;
     }
 }
 
@@ -252,12 +343,12 @@ Bootstrap 4 breakpoints
     } /*1rem = 16px*/
 
     .sub_title {
-      font-size: 30px;
+        font-size: 30px;
     }
 
-    .image-logo{
-      width: 270px;
-      height: auto;
+    .image-logo {
+        width: 270px;
+        height: auto;
     }
 }
 
@@ -268,16 +359,16 @@ Bootstrap 4 breakpoints
     } /*1rem = 16px*/
 
     .sub_title {
-      font-size: 35px;
+        font-size: 35px;
     }
 
-    .image-logo{
-      width: 290px;
-      height: auto;
+    .image-logo {
+        width: 290px;
+        height: auto;
     }
 
     #logo img {
-      height: 50px;
+        height: 50px;
     }
 }
 
@@ -288,12 +379,12 @@ Bootstrap 4 breakpoints
     } /*1rem = 16px*/
 
     .sub_title {
-      font-size: 35px;
+        font-size: 35px;
     }
 
-    .image-logo{
-      width: 311px;
-      height: auto;
+    .image-logo {
+        width: 311px;
+        height: auto;
     }
 }
 

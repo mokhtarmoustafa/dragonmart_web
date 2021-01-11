@@ -40,15 +40,15 @@ class Store extends Model
 
     public function getIsOpenAttribute()
     {
+        // return 'open';
         $today = Carbon::now()->format('l');
 
         $now = Carbon::now()->format('H:i');
 
         
-        $open_times = json_decode($this->open_times);
-        $close_times = json_decode($this->close_times);
+        $open_times = (array)json_decode($this->open_times);
+        $close_times = (array)json_decode($this->close_times);
         
-        return 'open';
         $open_time = '';
         $close_time = '';
         $close_tomorow = false;

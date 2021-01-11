@@ -19,29 +19,39 @@ use Damas\Paytabs\paytabs;
 if (request()->hasHeader('lang'))
   app()->setLocale(request()->header('lang'));
 
-Route::get('test', function () {
-
-  return  App\Store::whereHas('categories', function ($q) {
-    $q->where('id', 18);
-  })->get();
-
-
-
-  $store_products = App\Product::where('category_id', 700)->paginate(15);
-
-  return $store_products;
-  $store = App\User::find(409);
-  $store_categories = App\ProductCategory::where('store_id', $store->id)->pluck('id')->all();
-  // return App\User::with(array('store'=>function($query){
-  //   $query->select('id');
-  // }))->select('id','username')->where('id', 387)->get();
-  // // return App\User::with('store')->where('id', 387)->get('id', 'username');
-  // return App\User::where('id', 387)->pluck('username', 'id')->all();
-  // // return App\Store::find(83);
-
+Route::get('/newtest', function() {
+  return 'dfgvsc';
 });
 
+// Route::get('/test', function () {
+
+
+//   return 'dfgvsc';
+//   // return App\User::where('id', 409)->get();
+
+//   // return  App\Store::whereHas('categories', function ($q) {
+//   //   $q->where('id', 18);
+//   // })->get();
+
+
+
+//   // $store_products = App\Product::where('category_id', 700)->paginate(15);
+
+//   // return $store_products;
+//   // $store = App\User::find(409);
+//   // $store_categories = App\ProductCategory::where('store_id', $store->id)->pluck('id')->all();
+//   // return App\User::with(array('store'=>function($query){
+//   //   $query->select('id');
+//   // }))->select('id','username')->where('id', 387)->get();
+//   // // return App\User::with('store')->where('id', 387)->get('id', 'username');
+//   // return App\User::where('id', 387)->pluck('username', 'id')->all();
+//   // // return App\Store::find(83);
+
+// });
+
 Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], function () {
+
+  
 
   Route::get('/down', function () {
     return response_api(false, 200, null, []);
@@ -152,7 +162,7 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
   //    });
   Route::group(['middleware' => ['auth:api']], function () { //, 'verified'
 
-
+    
     Route::post('logout', 'UserController@logout');
     Route::post('userupdate', 'UserController@putUser'); //edit profile
     // Route::post('NewAddress', 'UserController@NewAddress');
@@ -180,6 +190,7 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
 
     Route::group(['middleware' => ['client-app']], function () {
+      
 
       Route::post('product_cart', 'CartController@postProductCart'); //
       Route::get('user_order/{id}', 'OrderController@getUserOrder'); //
@@ -217,6 +228,7 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
     //
     //        });
 
+    
     Route::group(['middleware' => ['driver-app']], function () {
       //            dropOff
       Route::post('drop-off', 'OrderController@dropOff'); //
@@ -236,6 +248,11 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
   Route::group(['middleware' => 'authGuest:api'], function () {
 
+    Route::get('/test', function() {
+      return 'dfgvsc';
+    });
+
+    
     // API KEY 425BB3336356AA17EBB1C54BF143F
     // Route::post('POS/category/new' , 'POSController@CategoryNew');
     // Route::post('POS/category/update' , 'POSController@CategoryUpdate');
