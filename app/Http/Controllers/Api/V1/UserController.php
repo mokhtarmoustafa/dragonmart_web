@@ -48,7 +48,7 @@ class UserController extends Controller
     // Sign up
     public function postUser(CreateUserRequest $request)
     {
-//        return phpinfo();
+        // return phpinfo();
         return $this->user->create($request->all());
     }
 
@@ -101,7 +101,7 @@ class UserController extends Controller
         return $this->user->confirm_code($request->all());
     }
 
-// resent confirm code
+    // resent confirm code
     public function resendConfirmCode(ResendConfirmCodeRequest $request)
     {
         return $this->user->resend_confirm_code($request->all());
@@ -130,19 +130,17 @@ class UserController extends Controller
     public function sendVerificationCode(SendVerificationCodeRequest $request)
     {
         return $this->user->send_confirm_code($request->all());
-
     }
 
     public function checkChangeMobile(Request $request)
     {
         return $this->user->check_change_mobile($request->all());
-
     }
 
 
     public function NewAddress(Request $request)
     {
-      return $this->user->NewAddress($request->all());
+        return $this->user->NewAddress($request->all());
     }
 
     public function sendFPVerificationCode(Request $attributes)
@@ -223,8 +221,7 @@ class UserController extends Controller
                 $msg = 'الرمز المدخل غير صحيح ، الرجاء التأكد من الرمز';
                 return response_api(false, 422, $msg, []);
             }
-        }
-        else{
+        } else {
             return response_api(false, 422, "Error",  []);
         }
     }
@@ -235,20 +232,20 @@ class UserController extends Controller
 
         $user->password = Hash::make($attributes['password']);
 
-        if ($user->save()){
+        if ($user->save()) {
             $reset_password = ResetPassword::where('user_id', $attributes['user_id'])->orderBy('id', 'desc')->first();
             $admin = Admin::Where('user_id', $attributes['user_id'])->first();
 
             $reset_password->state = 1;
             $reset_password->save();
 
-            if (!is_null($admin)){
+            if (!is_null($admin)) {
                 $admin->password = Hash::make($attributes['password']);
                 $admin->save();
             }
 
 
-            return response_api(true, 200, "Reset Password success", []);  
+            return response_api(true, 200, "Reset Password success", []);
         }
 
         return response_api(false, 422, "Reset Password failed", []);
@@ -258,22 +255,20 @@ class UserController extends Controller
     public function getCategories($id)
     {
         $cats =  ProductCategory::where('store_id',  $id)
-                ->whereNull('deleted_at')
-                ->select(['id', 'name', 'name_ar'])
-                ->orderByRaw('-order_by DESC')
-                ->orderByDesc('created_at')->get();
-                
-       return $cats;
+            ->whereNull('deleted_at')
+            ->select(['id', 'name', 'name_ar'])
+            ->orderByRaw('-order_by DESC')
+            ->orderByDesc('created_at')->get();
+
+        return $cats;
     }
-    
+
     public function getProductsByCatId($catId)
     {
         $products =  Product::where('category_id',  $catId)
-                ->select(['id', 'name', 'name_en', 'price'])
-                ->orderByDesc('created_at')->paginate(15);
-                
-       return $products;
+            ->select(['id', 'name', 'name_en', 'price'])
+            ->orderByDesc('created_at')->paginate(15);
+
+        return $products;
     }
-
-
 }

@@ -120,14 +120,13 @@
 		<section id="content">
 			<div class="content-wrap" style="padding: 0;">
 
-				<div class="page-section section p-0 topmargin-sm app_download"
-					style="margin-top: 0 !important;"
+				<div class="page-section section p-0 topmargin-sm app_download" style="margin-top: 0 !important;"
 					data-height-xl="600" data-height-lg="600">
 					<div class="container clearfix">
 						<div class="row clearfix">
 
 							<div class="col-lg-7" style="margin-top: 100px;">
-								
+
 								<div class="emphasis-title bottommargin-sm">
 									<h2 class="font-body ls1 font-weight-normal"><strong>تطبيق الجوال</strong></h2>
 								</div>
@@ -145,22 +144,21 @@
 								</div>
 							</div>
 							<div class="col-lg-5 row screenshot_container">
-								<div class="col-lg-6 screenshot2">
-									<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/app_download/02.png"
+								<div class="screenshot2">
+									<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/app_download/layer-3.png"
 										alt="NextGen Framework">
 								</div>
-								<div class="col-lg-6 screenshot1">
-									<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/app_download/01.png"
+								<div class="screenshot1">
+									<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/app_download/layer-2.png"
 										alt="NextGen Framework">
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
-					<div class="line"></div>
 				</div>
 
-				
+
 
 				<div class="container clearfix">
 
@@ -191,14 +189,10 @@
 					<div id="section-stunning-graphics" class="page-section topmargin bottommargin-lg">
 						<div class="row clearfix">
 
-							<div class="col-lg-5">
+							<div class="col-lg-5 about-us">
 								<div class="topmargin-lg d-none d-lg-block"></div>
-								<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/section/section-2-icon.png"
-									alt="Image" style="display: block;" class="bottommargin-sm">
 								<div class="emphasis-title bottommargin-sm">
-									<span class="before-heading">Retina Ready &#x7E; 534 PPI</span>
-									<h2 style="font-size: 42px;" class="font-body ls1 font-weight-normal">Stunning
-										Graphics</h2>
+									<h2 class="font-body ls1 font-weight-normal">المميزات</h2>
 								</div>
 								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing
 									elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
@@ -217,211 +211,29 @@
 					<div class="clear"></div>
 
 				</div>
-				
+
 				<div class="clear bottommargin"></div>
 
 				<div class="container clearfix">
 
-					<div id="section-pricing" class="page-section p-0 m-0">
-
-						<div class="pricing-tenure-switcher row align-items-center justify-content-center mb-4"
-							data-container="#pricing-switch">
-							<span class="pts-left font-weight-bold text-muted">Monthly</span>
-							<div class="pts-switcher mx-3">
-								<div class="switch">
-									<input id="switch-toggle-pricing-tenure" class="switch-toggle switch-toggle-round"
-										type="checkbox">
-									<label for="switch-toggle-pricing-tenure" class="mb-0"></label>
-								</div>
-							</div>
-							<span class="pts-right font-weight-bold text-muted">Yearly</span>
-						</div>
-
-						<div id="pricing-switch" class="pricing row col-mb-30 mb-5">
-
-							<div class="col-lg-4 col-md-6">
-
-								<div class="pricing-box text-center">
-									<div class="pricing-title text-uppercase">
-										<h3>Starter</h3>
-									</div>
-									<div class="pricing-price">
-										FREE<span class="price-tenure">Limited Access</span>
-									</div>
-									<div class="pricing-features border-0 bg-transparent">
-										<ul>
-											<li><strong>Full</strong> Access</li>
-											<li><i class="icon-code"></i> Source Files</li>
-											<li><strong>100</strong> User Accounts</li>
-											<li><strong>1 Year</strong> License</li>
-											<li>Phone &amp; Email Support</li>
-										</ul>
-									</div>
-									<div class="pricing-action">
-										<a href="#modal-get-started" data-lightbox="inline"
-											data-pricing-plan="Starter Plan"
-											class="button button-large button-rounded text-capitalize ls0"
-											style="border-radius: 23px;">Get Started</a>
-									</div>
-								</div>
-
+					<div class="section-signup p-0 m-0">
+						<div class="row col-mb-30 mb-5">
+							<div class="col-lg-4 col-md-6 text-center signup-box driver">
+								<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/signup/driver.png" alt="">
+								<div class="line"></div>
+								<a href="#modal-get-started" class="btn btn-danger">التسجيل كسائق</a>
 							</div>
 
-							<div class="col-lg-4 col-md-6">
-
-								<div class="pricing-box text-center">
-									<div class="pricing-title text-uppercase">
-										<h3>Professional</h3>
-									</div>
-									<div class="pricing-price">
-										<div class="pts-switch-content-left"><span
-												class="price-unit">&dollar;</span>12<span
-												class="price-tenure">Monthly</span></div>
-										<div class="pts-switch-content-right"><span
-												class="price-unit">&dollar;</span>99<span
-												class="price-tenure">Yearly</span></div>
-									</div>
-									<div class="pricing-features border-0 bg-transparent">
-										<ul>
-											<li><strong>Full</strong> Access</li>
-											<li><i class="icon-code"></i> Source Files</li>
-											<li><strong>1000</strong> User Accounts</li>
-											<li><strong>2 Years</strong> License</li>
-											<li><i class="icon-star3"></i>
-												<i class="icon-star3"></i>
-												<i class="icon-star3"></i>
-												<i class="icon-star3"></i>
-												<i class="icon-star3"></i></li>
-										</ul>
-									</div>
-									<div class="pricing-action">
-										<div class="pts-switch-content-left"><a href="#modal-get-started"
-												data-lightbox="inline" data-pricing-plan="Professional Monthly Plan"
-												class="button button-large button-rounded text-capitalize ls0"
-												style="border-radius: 23px;">Start Free Trial</a></div>
-										<div class="pts-switch-content-right"><a href="#modal-get-started"
-												data-lightbox="inline" data-pricing-plan="Professional Yearly Plan"
-												class="button button-large button-rounded text-capitalize ls0"
-												style="border-radius: 23px;">Start Free Trial</a></div>
-									</div>
-								</div>
-
+							<div class="col-lg-4 col-md-6 text-center signup-box store">
+								<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/signup/store.png" alt="">
+								<div class="line"></div>
+								<a href="#modal-get-started" class="btn btn-danger">التسجيل كتاجر</a>
 							</div>
 
-							<div class="col-lg-4 offset-lg-0 col-md-6 offset-md-3">
-
-								<div class="pricing-box text-center">
-									<div class="pricing-title text-uppercase">
-										<h3>Business</h3>
-									</div>
-									<div class="pricing-price">
-										<div class="pts-switch-content-left"><span
-												class="price-unit">&dollar;</span>19<span
-												class="price-tenure">Monthly</span></div>
-										<div class="pts-switch-content-right"><span
-												class="price-unit">&dollar;</span>149<span
-												class="price-tenure">Yearly</span></div>
-									</div>
-									<div class="pricing-features border-0 bg-transparent">
-										<ul>
-											<li><strong>Full</strong> Access</li>
-											<li><i class="icon-code"></i> Source Files</li>
-											<li><strong>500</strong> User Accounts</li>
-											<li><strong>3 Years</strong> License</li>
-											<li>Phone &amp; Email Support</li>
-										</ul>
-									</div>
-									<div class="pricing-action">
-										<div class="pts-switch-content-left"><a href="#modal-get-started"
-												data-lightbox="inline" data-pricing-plan="Business Monthly Plan"
-												class="button button-large button-rounded text-capitalize ls0"
-												style="border-radius: 23px;">Start Free Trial</a></div>
-										<div class="pts-switch-content-right"><a href="#modal-get-started"
-												data-lightbox="inline" data-pricing-plan="Business Yearly Plan"
-												class="button button-large button-rounded text-capitalize ls0"
-												style="border-radius: 23px;">Start Free Trial</a></div>
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-
-						<!-- Modal -->
-						<div class="modal1 mfp-hide" id="modal-get-started">
-							<div class="block mx-auto" style="background-color: #FFF; max-width: 800px;">
-								<div class="form-widget p-5" data-loader="button">
-									<div class="form-result"></div>
-									<form action="#" id="get-started-form" method="post" class="mb-0">
-
-										<div class="row clearfix">
-											<div class="col-md-8">
-												<h3 class="font-body">Register for an Account</h3>
-											</div>
-											<div class="col-md-4">
-												<div id="modal-get-started-package"></div>
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize"
-													for="get-started-form-username">Choose Username:</label>
-												<input type="text" id="get-started-form-username"
-													name="get-started-form-username" value=""
-													class="form-control required no-error-msg" />
-											</div>
-
-											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize"
-													for="get-started-form-email">Your Email:</label>
-												<input type="email" id="get-started-form-email"
-													name="get-started-form-email" value=""
-													class="form-control required email no-error-msg" />
-											</div>
-
-											<div class="w-100"></div>
-
-											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize"
-													for="get-started-form-password">Choose Password:</label>
-												<input type="password" id="get-started-form-password"
-													name="get-started-form-password" value=""
-													class="form-control required no-error-msg" />
-											</div>
-
-											<div class="col-md-6 form-group">
-												<label class="font-body text-capitalize"
-													for="get-started-form-password">Retype Password:</label>
-												<input type="password" id="get-started-form-repassword"
-													name="get-started-form-repassword" value=""
-													class="form-control required no-error-msg" />
-											</div>
-
-											<!-- Package Selector Hidden Input Value Setter -->
-											<input type="hidden" id="get-started-form-package"
-												name="get-started-form-package" value="Free">
-
-											<div class="col-12 form-group">
-												<label>
-													<input type="checkbox" id="get-started-form-agree"
-														name="get-started-form-agree" value="1"
-														style="position: relative; top: 2px; margin-right: 5px;"> I
-													Agree to the Terms &amp; Conditions
-												</label>
-											</div>
-
-											<div class="col-12 form-group">
-												<button class="button button-rounded m-0" id="get-started-form-submit"
-													name="get-started-form-submit" value="login">Get Started</button>
-												<a href="#" data-scrollto="#section-pricing" data-easing="easeInOutExpo"
-													data-speed="1250" data-offset="160" class="float-right"
-													onClick="$.magnificPopup.close();">Change Plan?</a>
-											</div>
-										</div>
-
-									</form>
-								</div>
+							<div class="col-lg-4 col-md-6 text-center signup-box client">
+								<img src="<?php echo e(url('/assets')); ?>/site/app-landing/images/signup/client.png" alt="">
+								<div class="line"></div>
+								<a href="#modal-get-started" class="btn btn-danger">التسجيل كعميل</a>
 							</div>
 						</div>
 

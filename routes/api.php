@@ -19,7 +19,7 @@ use Damas\Paytabs\paytabs;
 if (request()->hasHeader('lang'))
   app()->setLocale(request()->header('lang'));
 
-Route::get('/newtest', function() {
+Route::get('/newtest', function () {
   return 'dfgvsc';
 });
 
@@ -51,7 +51,7 @@ Route::get('/newtest', function() {
 
 Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], function () {
 
-  
+
 
   Route::get('/down', function () {
     return response_api(false, 200, null, []);
@@ -162,7 +162,7 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
   //    });
   Route::group(['middleware' => ['auth:api']], function () { //, 'verified'
 
-    
+
     Route::post('logout', 'UserController@logout');
     Route::post('userupdate', 'UserController@putUser'); //edit profile
     // Route::post('NewAddress', 'UserController@NewAddress');
@@ -190,7 +190,7 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
 
     Route::group(['middleware' => ['client-app']], function () {
-      
+
 
       Route::post('product_cart', 'CartController@postProductCart'); //
       Route::get('user_order/{id}', 'OrderController@getUserOrder'); //
@@ -210,6 +210,8 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
       });
     });
+
+
     Route::group(['middleware' => ['merchant-app']], function () {
 
       Route::get('drivers/{is_my_driver?}', 'UserController@getDriversList'); //
@@ -219,7 +221,10 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
       Route::post('category', 'CategoryController@saveMerchantCategory'); //
 
     });
+
+
     Route::post('requests', 'OrderController@getOrders'); //
+
     Route::group(['middleware' => ['check-activate']], function () { //, 'verified'
       Route::get('service_request/{id}', 'ServiceController@getServiceRequest'); //
       Route::post('confirm_request', 'OrderController@confirmOrder'); //
@@ -228,12 +233,16 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
     //
     //        });
 
-    
+
     Route::group(['middleware' => ['driver-app']], function () {
       //            dropOff
       Route::post('drop-off', 'OrderController@dropOff'); //
 
+
+
     });
+
+
     Route::group(['middleware' => ['service-app']], function () {
       //
       //            addServices
@@ -248,11 +257,36 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
   Route::group(['middleware' => 'authGuest:api'], function () {
 
-    Route::get('/test', function() {
-      return 'dfgvsc';
+    Route::get('/test', function () {
+      return 'Test';
     });
 
-    
+    // client
+    Route::post('NewAddress', 'UserController@NewAddress');
+
+    Route::post('payment', 'POSController@payment');
+    Route::get('payment/success', 'POSController@payment_success');
+    Route::get('payment/cancel', 'POSController@payment_cancel');
+    Route::get('payment/declined', 'POSController@payment_declined');
+
+    Route::post('CheckPromotionCode', 'POSController@CheckPromotionCode');
+
+    // merch
+
+    // driver
+
+    // all
+    Route::get('profile/{id?}', 'UserController@getProfile');
+
+    Route::get('Chats/{id}', 'ChatController@getChats'); //Get Chats
+    Route::get('Chat/{id}', 'ChatController@getChat'); //Get Chat
+
+    Route::post('Chat/new/{id}', 'ChatController@newChat'); //New Chat
+    Route::post('Chat/{id}', 'ChatController@SendMsg'); //New Chat
+
+    Route::post('order/{action}', 'POSController@orderAction');
+    Route::post('order/{action}', 'POSController@orderAction');
+    //-------------------------------------------------------------------------------------
     // API KEY 425BB3336356AA17EBB1C54BF143F
     // Route::post('POS/category/new' , 'POSController@CategoryNew');
     // Route::post('POS/category/update' , 'POSController@CategoryUpdate');
@@ -267,44 +301,21 @@ Route::group(['prefix' => version_api(), 'namespace' => namespace_api()], functi
 
     Route::get('POS/orders', 'POSController@getorders');
 
-    Route::post('NewAddress', 'UserController@NewAddress');
 
-
-
-    Route::get('profile/{id?}', 'UserController@getProfile');
     Route::post('home', 'HomeController@getUserHome'); //
+
     Route::post('products', 'ProductController@getProducts'); //get products list
-    Route::post('merchants', 'UserController@getMerchants'); //get merchants list
+    Route::post('merchants', 'UserController@getMerchants'); //get merchants list      //////////////
     Route::post('merchantCat', 'UserController@getMerchantCat'); //get merchants list
     Route::get('product/{id}', 'ProductController@getProduct'); //product detail
     Route::get('service/{id}', 'ServiceController@getService'); //service detail
-    Route::get('merchants', 'UserController@getMerchantsList'); //
-
-    Route::get('Chats/{id}', 'ChatController@getChats'); //Get Chats
-    Route::get('Chat/{id}', 'ChatController@getChat'); //Get Chat
-
-    Route::post('Chat/new/{id}', 'ChatController@newChat'); //New Chat
-    Route::post('Chat/{id}', 'ChatController@SendMsg'); //New Chat
-
-
+    Route::get('merchants', 'UserController@getMerchantsList'); //                     //////////////
 
     Route::post('service_providers', 'UserController@getServiceProviders'); //
     Route::post('services', 'ServiceController@getServices'); //get services list
     Route::post('reviews', 'ServiceController@getReviews'); //get reviews services list
 
 
-
-    Route::post('payment', 'POSController@payment');
-    Route::get('payment/success', 'POSController@payment_success');
-    Route::get('payment/cancel', 'POSController@payment_cancel');
-    Route::get('payment/declined', 'POSController@payment_declined');
-
-
-    Route::post('order/{action}', 'POSController@orderAction');
-    Route::post('order/{action}', 'POSController@orderAction');
-
-
-    Route::post('CheckPromotionCode', 'POSController@CheckPromotionCode');
 
     //New Api's Ibrahim&Sherif
     Route::get('getCategories/{id}', 'UserController@getCategories');

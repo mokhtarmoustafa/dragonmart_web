@@ -69,7 +69,7 @@
 	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/bs-switches.css" type="text/css" />
 	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/colors.php?color=267DF4" type="text/css" />
 	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/custom.css" type="text/css" />
-	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/edited.css" type="text/css" />
+	<link rel="stylesheet" href="{{url('/assets')}}/site/css/home/editedhome.css" type="text/css" />
 
 
 @if(session()->has('lang') && session()->get('lang') == 'ar')

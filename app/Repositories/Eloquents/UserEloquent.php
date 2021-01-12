@@ -1858,6 +1858,7 @@ class UserEloquent extends Uploader implements UserRepository
             $merchant_ids = Store::whereIn('id', $stores_id)->pluck('merchant_id');
             $user_ids = $collection->whereIn('id', $merchant_ids)->pluck('id');
             $collection = User::where('type', 'merchant')->whereIn('id', $user_ids);
+
         }
 
         if (isset($attributes['merchant_name'])) {
@@ -1885,7 +1886,7 @@ class UserEloquent extends Uploader implements UserRepository
         $page_count = page_count($count, $page_size);
         $page_number = $page_number - 1;
         $page_number = $page_number > $page_count ? $page_number = $page_count - 1 : $page_number;
-        $object = $collection->take($page_size)->skip((int)$page_number * $page_size)->orderBy('created_at', 'desc')->get();
+        $object = $collection->take($page_size)->skip((int)$page_number * $page_size)->orderBy('created_at', 'desc')->with('Stores')->get();
 
         if (request()->segment(1) == 'api' || request()->ajax()) {
             if (count($object) > 0)

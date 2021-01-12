@@ -58,15 +58,16 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
 
-    public function findForPassport($identifier) {
+    public function findForPassport($identifier)
+    {
 
-        $identifier = preg_replace("/^0/" , "+966" ,$identifier);
-        $identifier = preg_replace("/^966/" , "+966" ,$identifier);
-        $identifier = preg_replace("/^00966/" , "+966" ,$identifier);
+        $identifier = preg_replace("/^0/", "+966", $identifier);
+        $identifier = preg_replace("/^966/", "+966", $identifier);
+        $identifier = preg_replace("/^00966/", "+966", $identifier);
 
 
         return $this->orWhere('email', $identifier)->orWhere('mobile', $identifier)->first();
-}
+    }
 
 
     /**
@@ -228,12 +229,12 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getServiceRateAttribute()
     {
         if ($this->type == 'service_provider') {
-//            return $this->ServiceRates()->avg('rate');
+            //            return $this->ServiceRates()->avg('rate');
 
             $service_ids = $this->Services()->pluck('id')->toArray();
             $service_request_ids = ServiceRequest::whereIn('service_id', $service_ids)->pluck('service_client_id')->unique();
             return doubleval(ServiceRate::whereIn('service_request_id', $service_request_ids)->avg('rate'));
-//
+            //
         }
         return null;
     }
@@ -254,7 +255,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $service_ids = $this->Services()->pluck('id')->toArray();
             $service_request_ids = ServiceRequest::whereIn('service_id', $service_ids)->pluck('service_client_id')->unique();
             return ServiceRate::whereIn('service_request_id', $service_request_ids)->orderByDesc('created_at')->get();
-//            return $this->Services()->take(2)->orderByDesc('created_at')->get();
+            //            return $this->Services()->take(2)->orderByDesc('created_at')->get();
         }
         return null;
     }
@@ -336,7 +337,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         if ($this->type == 'merchant') {
             return Order::where('merchant_id', $this->id)->where('last_status', 'finished')->sum(DB::raw('products_price + shipment_price'));
-
         }
         return null;
     }
@@ -353,9 +353,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->City()->first();
 
-//        if ($this->type == 'merchant') {
-//        }
-//        return null;
+        //        if ($this->type == 'merchant') {
+        //        }
+        //        return null;
     }
 
     // public function getStoreImagesAttribute()
@@ -425,22 +425,22 @@ class User extends Authenticatable implements MustVerifyEmail
         return null;
     }
 
-//    public function getAppShipmentsAttribute()
-//    {
-//        if ($this->type == 'merchant')
-//            return $this->Shipments()->orderBy('from', 'ASC')->get();
-//        return null;
-//    }
+    //    public function getAppShipmentsAttribute()
+    //    {
+    //        if ($this->type == 'merchant')
+    //            return $this->Shipments()->orderBy('from', 'ASC')->get();
+    //        return null;
+    //    }
 
     public function getHasMerchantDriverAttribute()
     {
         if ($this->type == 'merchant')
             return ($this->DeliveryMethod()->where('driver_type_id', 3)->count() > 0) ? 1 : 0;
-//        {
-//            $has = $this->DeliveryMethod()->find(3);
-//            dd($this->DeliveryMethod()->first());
-//            return isset($has);
-//        }
+        //        {
+        //            $has = $this->DeliveryMethod()->find(3);
+        //            dd($this->DeliveryMethod()->first());
+        //            return isset($has);
+        //        }
         return 0;
     }
 
@@ -449,10 +449,10 @@ class User extends Authenticatable implements MustVerifyEmail
         if ($this->type == 'merchant')
             return ($this->DeliveryMethod()->where('driver_type_id', 1)->count() > 0) ? 1 : 0;
 
-//        {
-//            $has = $this->DeliveryMethod()->find(1);
-//            return isset($has);
-//        }
+        //        {
+        //            $has = $this->DeliveryMethod()->find(1);
+        //            return isset($has);
+        //        }
         return 0;
     }
 
@@ -461,10 +461,10 @@ class User extends Authenticatable implements MustVerifyEmail
         if ($this->type == 'merchant')
             return ($this->DeliveryMethod()->where('driver_type_id', 2)->count() > 0) ? 1 : 0;
 
-//        {
-//            $has = $this->DeliveryMethod()->find(2);
-//            return isset($has);
-//        }
+        //        {
+        //            $has = $this->DeliveryMethod()->find(2);
+        //            return isset($has);
+        //        }
         return 0;
     }
 
@@ -476,8 +476,8 @@ class User extends Authenticatable implements MustVerifyEmail
                 if ($driver_type->id == 1) return 'dragonmart_driver';
                 if ($driver_type->id == 2) return 'freelancer_driver';
                 if ($driver_type->id == 3) return 'merchant_driver';
-//            $merchant_driver = StoreDriver::where('driver_id', $this->id)->first();
-//            return isset($merchant_driver) ? 'merchant_driver' : 'freelancer_driver';
+                //            $merchant_driver = StoreDriver::where('driver_id', $this->id)->first();
+                //            return isset($merchant_driver) ? 'merchant_driver' : 'freelancer_driver';
             }
         }
         return 0;
@@ -496,7 +496,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $filename = storage_path('app/users/' . $model->id . '/' . $model->getOriginal('image'));
             $filename100 = storage_path('app/users/' . $model->id . '/100/' . $model->getOriginal('image'));
             $filename300 = storage_path('app/users/' . $model->id . '/300/' . $model->getOriginal('image'));
-//
+            //
             if (file_exists($filename)) {
                 unlink($filename);
                 unlink($filename100);
@@ -505,5 +505,4 @@ class User extends Authenticatable implements MustVerifyEmail
             }
         });
     }
-
 }

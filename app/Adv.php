@@ -21,18 +21,18 @@ class Adv extends Model
 
     public function getImage100Attribute()
     {
-        return url('storage/app/advs/' . $this->id) . '/100/' . $this->attributes['image'];
+        return url('storage/app/advs/' . $this->id) . '/100/' . $this->image;
     }
 
     public function getImage300Attribute()
     {
-        return url('storage/app/advs/' . $this->id) . '/300/' . $this->attributes['image'];
+        return url('storage/app/advs/' . $this->id) . '/300/' . $this->image;
     }
 
-    public function getImageAttribute($value)
+    public function getImageAttribute($image)
     {
-        if (isset($value))
-            return url('storage/app/advs/' . $this->id) . '/' . $value;
+        if (isset($image))
+            return url('storage/app/advs/' . $this->id) . '/' . $image;
         return null;
     }
 
@@ -41,9 +41,9 @@ class Adv extends Model
     }
 
 
-    public function getActionAttribute()
+    public function getActionAttribute($action)
     {
-            return json_decode($this->attributes['action']);
+            return json_decode($action);
     }
 
 

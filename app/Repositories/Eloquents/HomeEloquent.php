@@ -107,12 +107,10 @@ class HomeEloquent implements Repository
 
         if (request()->segment(1) == 'api') {
             $data = [
-                'advertisements' => Adv::select(['id'])->where('status',1)->orderByDesc('created_at')->get()->each(function ($adv) {
-                    $adv->setAppends(['image']);
-                  }),
-                'offer_sponsor_products' => $offer_sponsor_products->where('is_active',1)->whereIn('merchant_id', $merchants_active_id)->take(5)->get(),
-                'new_products' => $new_products->where('is_active',1)->whereIn('merchant_id', $merchants_active_id)->take(5)->get(),
-                'popular_products' => $popular_products->where('is_active',1)->whereIn('merchant_id', $merchants_active_id)->take(5)->get(),
+                'advertisements' => Adv::select(['id', 'merchant_id', 'image', 'action'])->where('status',1)->orderByDesc('created_at')->get()->makeHidden(['image100', 'image300', 'merchant_image']),
+                // 'offer_sponsor_products' => $offer_sponsor_products->where('is_active',1)->whereIn('merchant_id', $merchants_active_id)->take(5)->get(),
+                // 'new_products' => $new_products->where('is_active',1)->whereIn('merchant_id', $merchants_active_id)->take(5)->get(),
+                // 'popular_products' => $popular_products->where('is_active',1)->whereIn('merchant_id', $merchants_active_id)->take(5)->get(),
                 'top_selling_products' => $top_selling_products->where('is_active',1)->whereIn('merchant_id', $merchants_active_id)->take(5)->get(),
             ];
 
