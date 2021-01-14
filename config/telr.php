@@ -1,11 +1,11 @@
 <?php
 return [
     // The current mode is live|production or test
-    'test_mode' => env('TELR_TEST_MODE', false),
+    'test_mode' => env('TELR_TEST_MODE', true),
     
     // The currency of store
 
-    'currency' => 'SAR',
+    'currency' => 'AED',
 
     // The sale endpoint that receive the params
     // @see https://telr.com/support/knowledge-base/hosted-payment-page-integration-guide

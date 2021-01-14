@@ -134,12 +134,14 @@
 
 								<div class="row">
 									<div class="col-lg-6 center">
-										<img src="{{url('/assets')}}/site/app-landing/images/app_download/group-1.png"
-											alt="NextGen Framework" data-animate="fadeInRight">
+										<a href="https://play.google.com/store/apps/details?id=com.saudidragonmart.app" target="_blank"><img
+												src="{{url('/assets')}}/site/app-landing/images/app_download/group-1.png"
+												alt="NextGen Framework" data-animate="fadeInRight"></a>
 									</div>
 									<div class="col-lg-6 center">
-										<img src="{{url('/assets')}}/site/app-landing/images/app_download/group-2.png"
-											alt="NextGen Framework" data-animate="fadeInRight">
+										<a href="https://apps.apple.com/sa/app/dragon-mart/id1523014369" target="_blank"><img
+												src="{{url('/assets')}}/site/app-landing/images/app_download/group-2.png"
+												alt="NextGen Framework" data-animate="fadeInRight"></a>
 									</div>
 								</div>
 							</div>
@@ -165,17 +167,20 @@
 					<div id="section-nextgen" class="page-section bottommargin-lg">
 						<div class="row clearfix">
 
-							<div class="col-lg-5 about-us">
+							<div class="col-lg-7 about-us">
 								<div class="topmargin-lg d-none d-lg-block"></div>
-								<div class="emphasis-title bottommargin-sm">
-									<h2 class="font-body ls1 font-weight-normal">من نحن ؟</h2>
+								<div class="title">
+									<img src="{{url('/assets')}}/site/app-landing/images/about_us/about_us.png"
+										alt="NextGen Framework">
 								</div>
-								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing
-									elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
-								<a href="#" class="section-more-link">Learn More <i class="icon-angle-right"></i></a>
+								<p>دراغون مارت هو تطبيق إلكتروني لتسويق و
+									توصيل المنتجات و الخدمات من السوق المحلي (المتاجر المشاركة) إلى المستهلك
+									المحلي ( تكون هذه المتاجر في نفس المنطقة الجغرافية للمستهلك ) كما يشمل
+									تسويق و توصيل المنتجات من المتاجر مفتوحة التوصيل إلى أي مكان و يكون
+									برسوم محددة.</p>
 							</div>
 
-							<div class="col-lg-7 center">
+							<div class="col-lg-5 center">
 								<img src="{{url('/assets')}}/site/app-landing/images/section/iphone-watch.png"
 									alt="NextGen Framework" data-animate="fadeInLeft">
 							</div>
@@ -184,7 +189,6 @@
 					</div>
 
 					<div class="line"></div>
-					<div class="clear"></div>
 
 					<div id="section-stunning-graphics" class="page-section topmargin bottommargin-lg">
 						<div class="row clearfix">
@@ -192,7 +196,7 @@
 							<div class="col-lg-5 about-us">
 								<div class="topmargin-lg d-none d-lg-block"></div>
 								<div class="emphasis-title bottommargin-sm">
-									<h2 class="font-body ls1 font-weight-normal">المميزات</h2>
+									<h2 class="font-body ls1 font-weight-normal"><strong>المميزات</strong></h2>
 								</div>
 								<p style="color: #777;" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing
 									elit. Praesentium, vel! Eius pariatur nemo expedita.</p>
@@ -227,13 +231,13 @@
 							<div class="col-lg-4 col-md-6 text-center signup-box store">
 								<img src="{{url('/assets')}}/site/app-landing/images/signup/store.png" alt="">
 								<div class="line"></div>
-								<a href="#modal-get-started" class="btn btn-danger">التسجيل كتاجر</a>
+								<a href="#modal-get-started" class="btn btn-warning">التسجيل كتاجر</a>
 							</div>
 
 							<div class="col-lg-4 col-md-6 text-center signup-box client">
 								<img src="{{url('/assets')}}/site/app-landing/images/signup/client.png" alt="">
 								<div class="line"></div>
-								<a href="#modal-get-started" class="btn btn-danger">التسجيل كعميل</a>
+								<a href="#modal-get-started" class="btn">التسجيل كعميل</a>
 							</div>
 						</div>
 

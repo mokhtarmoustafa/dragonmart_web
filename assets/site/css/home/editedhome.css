@@ -311,9 +311,15 @@
     bottom: 0px;
 }
 
-.about-us h2 {
-    font-size: 100px;
-    font-family: "Expo Arabic", sans-serif !important;
+.about-us .title {
+    width: 85%;
+    margin-bottom: 25px;
+}
+.about-us p {
+    color: #777777;
+    font-size: 30px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .signup-box {
@@ -339,6 +345,18 @@
     width: 325px;
     height: 696px;
     margin: 139px 0 13px 0px;
+}
+
+.signup-box.client a {
+    color: #ffffff;
+    background-color: #23c3ee;
+    border-color: #23c3ee;
+}
+
+.signup-box.client a:hover {
+    color: #ffffff;
+    background-color: #20b0d8;
+    border-color: #20b0d8;
 }
 
 /*
